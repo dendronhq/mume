@@ -1,5 +1,5 @@
 {
-  "name": "@shd101wyy/mume",
+  "name": "@dendronhq/mume",
   "version": "0.6.0",
   "description": "A powerful markdown tool",
   "keywords": [
@@ -55,7 +55,6 @@
     "js-yaml": "^3.13.1",
     "less": "^3.9.0",
     "lodash": "^4.17.15",
-    "markdown-it-regex": "^0.2.0",
     "mkdirp": "^1.0.4",
     "node-fetch": "^2.6.0",
     "puppeteer-core": "1.15.0",
