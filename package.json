@@ -46,6 +46,7 @@
     ]
   },
   "dependencies": {
+    "@dendronhq/engine-server": "^0.6.6",
     "babyparse": "^0.4.6",
     "cheerio": "^1.0.0-rc.3",
     "chrome-location": "^1.2.1",
@@ -54,6 +55,7 @@
     "js-yaml": "^3.13.1",
     "less": "^3.9.0",
     "lodash": "^4.17.15",
+    "markdown-it-regex": "^0.2.0",
     "mkdirp": "^1.0.4",
     "node-fetch": "^2.6.0",
     "puppeteer-core": "1.15.0",
