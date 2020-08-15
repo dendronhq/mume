@@ -228,7 +228,7 @@
     vscode-uri "^2.1.2"
     yamljs "^0.3.0"
 
-"@dendronhq/engine-server@^0.6.6":
+"@dendronhq/engine-server@0.6.7":
   version "0.6.7"
   resolved "https://registry.yarnpkg.com/@dendronhq/engine-server/-/engine-server-0.6.7.tgz#f0a23865303c54e89f2e7358ded1520d2eaa9a3c"
   integrity sha512-j1MZmTIWvYPhhJTfW+S1bBiyPYOynWB5h961yrAgWGv73FSJ/2S5Kb800lQXTREgCigwCUVRPDtdQXnJk3rHLw==
