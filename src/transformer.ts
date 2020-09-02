@@ -17,8 +17,6 @@ import * as utility from "./utility";
 
 import { CustomSubjects } from "./custom-subjects";
 import * as PDF from "./pdf";
-// @ts-ignore
-import { replaceRefWithMPEImport } from "@dendronhq/engine-server";
 
 export interface HeadingData {
   content: string;
@@ -334,10 +332,6 @@ export async function transformMarkdown(
       let headingMatch;
       let taskListItemMatch;
       let htmlTagMatch;
-
-      // CUSTOM:DENDRON
-      line = replaceRefWithMPEImport(line, { root: fileDirectoryPath });
-      // CUSTOM:DENDRON:END
 
       /*
         // I changed this because for case like:

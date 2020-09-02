@@ -47,6 +47,7 @@ import enhanceWithResolvedImagePaths from "./render-enhancers/resolved-image-pat
 import { parseAttributes, stringifyAttributes } from "./lib/attributes";
 import { normalizeBlockInfo, parseBlockInfo } from "./lib/block-info";
 import { removeFileProtocol } from "./utility";
+import { getProcessor } from "@dendronhq/engine-server";
 
 const extensionDirectoryPath = utility.extensionDirectoryPath;
 const MarkdownIt = require(path.resolve(
@@ -2792,6 +2793,12 @@ sidebarTOCBtn.addEventListener('click', function(event) {
         "onWillTransformMarkdown"
       ](inputString);
     }
+
+    // TODO: change in future;
+    const root = this.fileDirectoryPath;
+    inputString = getProcessor({ root })
+      .processSync(inputString)
+      .toString();
 
     // import external files and insert anchors if necessary
     let outputString;
