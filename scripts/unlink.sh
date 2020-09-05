@@ -1,4 +1,6 @@
 $VERSION=$1
 
+pkg="@dendronhq/engine-server@$VERSION"
 yarn unlink @dendronhq/engine-server
-yarn add --force @dendronhq/engine-server@$VERSION
+echo "installing $pkg"
+yarn add --force $pkg
