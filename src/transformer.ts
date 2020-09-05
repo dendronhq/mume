@@ -1,22 +1,21 @@
 // import * as Baby from "babyparse"
+import { getProcessor } from "@dendronhq/engine-server";
 import * as Baby from "babyparse";
 import * as fs from "fs";
 import * as less from "less";
 import * as path from "path";
 import * as request from "request";
 import * as temp from "temp";
-import HeadingIdGenerator from "./heading-id-generator";
-import { parseAttributes, stringifyAttributes } from "./lib/attributes";
-import computeChecksum from "./lib/compute-checksum";
-import * as utility from "./utility";
-
 // import * as request from 'request'
 // import * as less from "less"
 // import * as temp from "temp"
 // temp.track()
-
 import { CustomSubjects } from "./custom-subjects";
+import HeadingIdGenerator from "./heading-id-generator";
+import { parseAttributes, stringifyAttributes } from "./lib/attributes";
+import computeChecksum from "./lib/compute-checksum";
 import * as PDF from "./pdf";
+import * as utility from "./utility";
 
 export interface HeadingData {
   content: string;
@@ -626,6 +625,22 @@ export async function transformMarkdown(
             continue;
           }
         }
+      }
+
+      // DENDRON NOTE REFS
+      const LINK_REGEX = /^(\s*)\(\((?<ref>[^)]+)\)\)/;
+      const refMatch = line.match(LINK_REGEX);
+      if (refMatch) {
+        const root = fileDirectoryPath;
+        const fileContent = getProcessor({ root })
+          .processSync(line)
+          .toString();
+        let output2: string = fileContent;
+        output2 = "\n" + output2 + "  ";
+        i = end + 1;
+        lineNo = lineNo + 1;
+        outputString = outputString + output2 + "\n";
+        continue;
       }
 
       // file import

@@ -8,4 +8,10 @@ module.exports = {
   roots: ["test"],
   testMatch: ["**/?(*.)(spec|test).(j|t)s?(x)"],
   testEnvironment: "node",
+  globals: {
+    "ts-jest": {
+      //tsConfig: "tsconfig.build.json",
+      diagnostics: false,
+    },
+  },
 };

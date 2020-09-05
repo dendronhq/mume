@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarkdownEngine basic 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<h1>Hello World</h1>
+<p>Text</p>
+<hr>
+<p><code>code span</code>some text</p>
+",
+  "markdown": "((ref:[[ref]]))
+---
+
+\`code span\`some text",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;

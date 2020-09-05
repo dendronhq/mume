@@ -11,8 +11,6 @@ import { processGraphs } from "./process-graphs";
 import { toc } from "./toc";
 import { transformMarkdown } from "./transformer";
 import * as utility from "./utility";
-// @ts-ignore
-import { getProcessor } from "@dendronhq/engine-server";
 
 /**
  * Convert all math expressions inside markdown to images.
@@ -248,9 +246,6 @@ export async function markdownConvert(
   if (onWillTransformMarkdown) {
     text = await onWillTransformMarkdown(text);
   }
-  text = getProcessor()
-    .processSync(text)
-    .toString();
 
   // import external files
   const data = await transformMarkdown(text, {

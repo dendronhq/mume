@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+{
+    "type": "node",
+    "request": "launch",
+    "name": "Debug file",
+    "program": "${workspaceFolder:mume}/node_modules/jest/bin/jest.js",
+    "cwd": "${workspaceFolder:mume}",
+    "args": ["--runInBand", "out/test/lib/dendron.test.js", "-u"],
+  },
+  // {
+  //   "type": "node",
+  //   "request": "launch",
+  //   "name": "Debug Jest Tests",
+  //   "cwd": "${workspaceRoot}",
+  //   "args": [
+  //     "--inspect-brk",
+  //     "${workspaceRoot}/node_modules/.bin/jest",
+  //     "--runInBand",
+  //     "--config",
+  //     "${workspaceRoot}/jest.config.json"
+  //   ],
+  //   "console": "integratedTerminal",
+  //   "internalConsoleOptions": "neverOpen"
+  // },
+]
+}
+
+// {
+//   "type": "node",
+//   "request": "launch",
+//   "name": "engine-server:debug test file",
+//   "program": "${workspaceFolder:engine-server}/node_modules/jest/bin/jest.js",
+//   "cwd": "${workspaceFolder:engine-server}",
+//   "args": ["--runInBand", "${relativeFile}", "-u"]
+// }
