@@ -3,12 +3,47 @@
 exports[`MarkdownEngine basic 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<h1>Hello World</h1>
-<p>Text</p>
+  "html": "<h1>h1 header</h1>
+<p>h1 text</p>
+<h1>h2 header</h1>
+<p>h2 text</p>
 <hr>
 <p><code>code span</code>some text</p>
 ",
   "markdown": "((ref:[[ref]]))
+---
+
+\`code span\`some text",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;
+
+exports[`MarkdownEngine with header 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<h1>h2 header</h1>
+<p>h2 text</p>
+<hr>
+<p><code>code span</code>some text</p>
+",
+  "markdown": "((ref:[[ref]]#h2 header))
+---
+
+\`code span\`some text",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;
+
+exports[`MarkdownEngine with header offset 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<p>h2 text</p>
+<hr>
+<p><code>code span</code>some text</p>
+",
+  "markdown": "((ref:[[ref]]#h2 header,1))
 ---
 
 \`code span\`some text",
