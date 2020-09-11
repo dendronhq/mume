@@ -632,7 +632,7 @@ export async function transformMarkdown(
       const refMatch = line.match(LINK_REGEX);
       if (refMatch) {
         const root = fileDirectoryPath;
-        const fileContent = getProcessor({ root })
+        const fileContent = getProcessor({ root, renderWithOutline: false })
           .processSync(line)
           .toString();
         let output2: string = fileContent;

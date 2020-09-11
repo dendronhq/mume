@@ -872,6 +872,104 @@ if (typeof(window['Reveal']) !== 'undefined') {
 
     // global styles
     styles += `<style>${utility.configs.globalStyle}</style>`;
+    styles += `<style>
+    iframe {
+      border: none;
+   }
+    .portal-container {
+      overscroll-behavior: contain;
+      border: 1px solid #c2dfe3;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      padding: 10px;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+   }
+    .portal-container:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, .15);
+      border: 1px solid #9db8bf;
+   }
+    .portal-container .portal-head {
+      border-bottom: 1px solid #c2dfe3;
+      padding: 12px;
+   }
+    .portal-container .portal-head .portal-backlink {
+      display: flex;
+      flex-direction: column;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+   }
+    @media (min-width: 600px) {
+      .portal-container .portal-head .portal-backlink {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+     }
+   }
+    .portal-container .portal-head .portal-backlink .portal-title {
+      font-size: 14px;
+      color: #9db8bf;
+   }
+    .portal-container .portal-head .portal-backlink .portal-title .portal-text-title {
+      font-weight: 700;
+      color: #5c6d73;
+   }
+    .portal-container .portal-head .portal-backlink .portal-arrow {
+      font-size: 14px;
+      color: #9db8bf;
+   }
+    .portal-container .portal-head .portal-backlink .portal-arrow:hover {
+      opacity: 0.5;
+   }
+    .portal-container .portal-iframe {
+      overflow: hidden;
+   }
+    .portal-container .portal-parent {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+   }
+    .portal-container .portal-parent .portal-parent-fader-top {
+      position: absolute;
+      width: 100%;
+      margin-left: 0px;
+      height: 36px;
+      z-index: 50;
+   }
+    .portal-container .portal-parent .portal-parent-fader-bottom {
+      position: absolute;
+      width: 100%;
+      bottom: 6px;
+      margin-left: 0px;
+      height: 36px;
+      z-index: 50;
+   }
+    .portal-container .portal-parent .portal-parent-text {
+      padding: 0.75;
+      color: #5c6d73;
+      z-index: 40;
+   }
+    .portal-container .portal-parent .portal-iframe {
+      width: 100%;
+      height: 400px;
+   }
+    .portal-quote-text {
+      background-color: #c2dfe3;
+      color: #373737;
+   }
+    .portal-quote-text:hover {
+      text-decoration: none;
+   }
+    
+    </style>`;
 
     return styles;
   }
