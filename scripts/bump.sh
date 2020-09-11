@@ -1,3 +1,2 @@
-$VERSION=$1
-
-yarn publish
+npm version minor
+npm publish
