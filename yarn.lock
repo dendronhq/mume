@@ -235,10 +235,10 @@
     tmp "^0.2.1"
     vscode-uri "^2.1.2"
 
-"@dendronhq/engine-server@0.10.5-alpha.0":
-  version "0.10.5-alpha.0"
-  resolved "https://registry.yarnpkg.com/@dendronhq/engine-server/-/engine-server-0.10.5-alpha.0.tgz#9025be1258bcc3e7d304289846a57c2fec7f5ceb"
-  integrity sha512-DLc3ojHY83ZVp5i9eFMaWZ+s8uDz+ZfqZ0RxvnHNeHs6T4mefT0sNpfPRRGDruXCFCEG6kXz9WvW9kruT50Jvg==
+"@dendronhq/engine-server@0.10.5-alpha.1":
+  version "0.10.5-alpha.1"
+  resolved "https://registry.yarnpkg.com/@dendronhq/engine-server/-/engine-server-0.10.5-alpha.1.tgz#9568f44e013b3e6cec8c92fe8a00c090810f8680"
+  integrity sha512-F9uRVG5OdGSSUgf68nauJR6PuTMSP59itBw2SX31dD2SK54gCKM7aioDWxbTHySUi/h3nMd9E4Y4QvUKBYXQ4w==
   dependencies:
     "@dendronhq/common-all" "^0.10.4"
     "@dendronhq/common-server" "^0.10.5-alpha.0"

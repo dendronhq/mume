@@ -3,10 +3,22 @@
 exports[`MarkdownEngine basic 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<h1>h1 header</h1>
+  "html": "<div class=\\"portal-container\\">
+<div class=\\"portal-head\\">
+    <div class=\\"portal-backlink\\">
+        <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">ref</span></div>
+        <a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/ref.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+    </div>
+</div>
+<div id=\\"portal-parent-{{include.anchor}}\\" class=\\"portal-parent\\">
+    <div class=\\"portal-parent-fader-top\\"></div>
+    <div class=\\"portal-parent-fader-bottom\\"></div>        
+<h1>h1 header</h1>
 <p>h1 text</p>
 <h1>h2 header</h1>
 <p>h2 text</p>
+</div>    
+</div>
 <hr>
 <p><code>code span</code>some text</p>
 ",
@@ -22,8 +34,20 @@ Object {
 exports[`MarkdownEngine with header 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<h1>h2 header</h1>
+  "html": "<div class=\\"portal-container\\">
+<div class=\\"portal-head\\">
+    <div class=\\"portal-backlink\\">
+        <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">ref</span></div>
+        <a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/ref.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+    </div>
+</div>
+<div id=\\"portal-parent-{{include.anchor}}\\" class=\\"portal-parent\\">
+    <div class=\\"portal-parent-fader-top\\"></div>
+    <div class=\\"portal-parent-fader-bottom\\"></div>        
+<h1>h2 header</h1>
 <p>h2 text</p>
+</div>    
+</div>
 <hr>
 <p><code>code span</code>some text</p>
 ",
@@ -39,7 +63,19 @@ Object {
 exports[`MarkdownEngine with header offset 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p>h2 text</p>
+  "html": "<div class=\\"portal-container\\">
+<div class=\\"portal-head\\">
+    <div class=\\"portal-backlink\\">
+        <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">ref</span></div>
+        <a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/ref.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+    </div>
+</div>
+<div id=\\"portal-parent-{{include.anchor}}\\" class=\\"portal-parent\\">
+    <div class=\\"portal-parent-fader-top\\"></div>
+    <div class=\\"portal-parent-fader-bottom\\"></div>        
+<p>h2 text</p>
+</div>    
+</div>
 <hr>
 <p><code>code span</code>some text</p>
 ",
@@ -53,6 +89,25 @@ Object {
 `;
 
 exports[`MarkdownEngine with wildcard 1`] = `
+"<div class=\\"portal-container\\">
+<div class=\\"portal-head\\">
+    <div class=\\"portal-backlink\\">
+        <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">ref</span></div>
+        <a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/ref.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+    </div>
+</div>
+<div id=\\"portal-parent-{{include.anchor}}\\" class=\\"portal-parent\\">
+    <div class=\\"portal-parent-fader-top\\"></div>
+    <div class=\\"portal-parent-fader-bottom\\"></div>        
+<p>h1 text</p>
+</div>    
+</div>
+<hr>
+<p><code>code span</code>some text</p>
+"
+`;
+
+exports[`MarkdownEngine without outline  1`] = `
 "<p>h1 text</p>
 <hr>
 <p><code>code span</code>some text</p>

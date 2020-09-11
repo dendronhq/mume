@@ -39,6 +39,7 @@ export interface MarkdownEngineConfig {
   puppeteerWaitForTimeout?: number;
   usePuppeteerCore?: boolean;
   puppeteerArgs?: string[];
+  renderRefWithOutline?: boolean;
 }
 
 export const defaultMarkdownEngineConfig: MarkdownEngineConfig = {
@@ -86,4 +87,5 @@ export const defaultMarkdownEngineConfig: MarkdownEngineConfig = {
   puppeteerWaitForTimeout: 0,
   usePuppeteerCore: true,
   puppeteerArgs: [],
+  renderRefWithOutline: true,
 };

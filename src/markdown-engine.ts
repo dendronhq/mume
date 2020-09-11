@@ -2890,6 +2890,7 @@ sidebarTOCBtn.addEventListener('click', function(event) {
         "onWillTransformMarkdown"
       ](inputString);
     }
+    const renderRefWithOutline = this.config.renderRefWithOutline;
 
     // import external files and insert anchors if necessary
     let outputString;
@@ -2913,6 +2914,7 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       useRelativeFilePath: options.useRelativeFilePath,
       filesCache: this.filesCache,
       usePandocParser: this.config.usePandocParser,
+      renderRefWithOutline,
       onWillTransformMarkdown:
         utility.configs.parserConfig["onWillTransformMarkdown"],
       onDidTransformMarkdown:

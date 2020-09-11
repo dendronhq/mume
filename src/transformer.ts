@@ -61,6 +61,7 @@ export interface TransformMarkdownOptions {
   imageDirectoryPath?: string;
   usePandocParser: boolean;
   headingIdGenerator?: HeadingIdGenerator;
+  renderRefWithOutline?: boolean;
   onWillTransformMarkdown?: (markdown: string) => Promise<string>;
   onDidTransformMarkdown?: (markdown: string) => Promise<string>;
 }
@@ -254,6 +255,7 @@ export async function transformMarkdown(
     imageDirectoryPath = "",
     usePandocParser = false,
     headingIdGenerator = new HeadingIdGenerator(),
+    renderRefWithOutline = false,
     onWillTransformMarkdown = null,
     onDidTransformMarkdown = null,
   }: TransformMarkdownOptions,
@@ -632,7 +634,10 @@ export async function transformMarkdown(
       const refMatch = line.match(LINK_REGEX);
       if (refMatch) {
         const root = fileDirectoryPath;
-        const fileContent = getProcessor({ root, renderWithOutline: false })
+        const fileContent = getProcessor({
+          root,
+          renderWithOutline: renderRefWithOutline,
+        })
           .processSync(line)
           .toString();
         let output2: string = fileContent;
