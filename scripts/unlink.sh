@@ -1,4 +1,4 @@
-VERSION="0.10.5-alpha.1"
+VERSION="0.12.11-alpha.3"
 
 pkg="@dendronhq/engine-server@$VERSION"
 yarn unlink @dendronhq/engine-server
