@@ -1,5 +1,5 @@
 // import * as Baby from "babyparse"
-import { getProcessor } from "@dendronhq/engine-server";
+import { dendronNoteRefPlugin, ParserUtilsV2 } from "@dendronhq/engine-server";
 import * as Baby from "babyparse";
 import * as fs from "fs";
 import * as less from "less";
@@ -634,10 +634,14 @@ export async function transformMarkdown(
       const refMatch = line.match(LINK_REGEX);
       if (refMatch) {
         const root = fileDirectoryPath;
-        const fileContent = getProcessor({
-          root,
-          renderWithOutline: renderRefWithOutline,
-        })
+        const fileContent = ParserUtilsV2.getRemark()
+          .use(dendronNoteRefPlugin, {
+            renderWithOutline: renderRefWithOutline,
+            replaceRefOpts: {
+              forNoteRefInPreview: true,
+            },
+            engine: ({ vaults: [root] } as unknown) as any,
+          })
           .processSync(line)
           .toString();
         let output2: string = fileContent;
