@@ -1,2 +1,2 @@
-npm version minor
+npm version 0.12
 npm publish
