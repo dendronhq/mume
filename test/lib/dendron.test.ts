@@ -21,6 +21,7 @@ describe("MarkdownEngine", () => {
         printBackground: true,
         enableScriptExecution: true, // <= for running code chunks
       },
+      engine: {} as any,
     });
     const out = await engine.parseMD(
       ["((ref:[[ref]]))", "---", "", "`code span`" + "some text"].join("\n"),
@@ -48,6 +49,7 @@ describe("MarkdownEngine", () => {
         printBackground: true,
         enableScriptExecution: true, // <= for running code chunks
       },
+      engine: {} as any,
     });
     const out = await engine.parseMD(
       [
@@ -82,6 +84,7 @@ describe("MarkdownEngine", () => {
         printBackground: true,
         enableScriptExecution: true, // <= for running code chunks
       },
+      engine: {} as any,
     });
     const out = await engine.parseMD(
       [
@@ -116,6 +119,7 @@ describe("MarkdownEngine", () => {
         printBackground: true,
         enableScriptExecution: true, // <= for running code chunks
       },
+      engine: {} as any,
     });
     const out = await engine.parseMD(
       [
@@ -151,6 +155,7 @@ describe("MarkdownEngine", () => {
         enableScriptExecution: true, // <= for running code chunks
         renderRefWithOutline: false,
       },
+      engine: {} as any,
     });
     const out = await engine.parseMD(
       [
