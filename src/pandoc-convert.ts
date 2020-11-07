@@ -385,6 +385,7 @@ export async function pandocConvert(
     usePandocParser: true,
     onWillTransformMarkdown,
     onDidTransformMarkdown,
+    engine: {} as any,
   });
   text = data.outputString;
 

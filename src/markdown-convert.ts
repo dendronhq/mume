@@ -260,6 +260,7 @@ export async function markdownConvert(
     usePandocParser,
     onWillTransformMarkdown,
     onDidTransformMarkdown,
+    engine: this.engine,
   });
 
   text = data.outputString;

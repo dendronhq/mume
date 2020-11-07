@@ -47,6 +47,7 @@ import enhanceWithResolvedImagePaths from "./render-enhancers/resolved-image-pat
 import { parseAttributes, stringifyAttributes } from "./lib/attributes";
 import { normalizeBlockInfo, parseBlockInfo } from "./lib/block-info";
 import { removeFileProtocol } from "./utility";
+import { DEngineClientV2 } from "../../../dendron/packages/common-server/node_modules/@dendronhq/common-all/lib";
 
 const extensionDirectoryPath = utility.extensionDirectoryPath;
 const MarkdownIt = require(path.resolve(
@@ -178,6 +179,7 @@ export class MarkdownEngine {
    * markdown file path
    */
   private readonly filePath: string;
+  private readonly engine: DEngineClientV2;
   private readonly fileDirectoryPath: string;
   private readonly projectDirectoryPath: string;
 
@@ -231,8 +233,10 @@ export class MarkdownEngine {
      * Markdown Engine configuration.
      */
     config?: MarkdownEngineConfig;
+    engine: DEngineClientV2;
   }) {
     this.filePath = args.filePath;
+    this.engine = args.engine;
     this.fileDirectoryPath = path.dirname(this.filePath);
     this.projectDirectoryPath =
       args.projectDirectoryPath || this.fileDirectoryPath;
@@ -2915,6 +2919,7 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       filesCache: this.filesCache,
       usePandocParser: this.config.usePandocParser,
       renderRefWithOutline,
+      engine: this.engine,
       onWillTransformMarkdown:
         utility.configs.parserConfig["onWillTransformMarkdown"],
       onDidTransformMarkdown:

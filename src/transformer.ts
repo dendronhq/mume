@@ -6,6 +6,7 @@ import * as less from "less";
 import * as path from "path";
 import * as request from "request";
 import * as temp from "temp";
+import { DEngineClientV2 } from "../../../dendron/packages/common-server/node_modules/@dendronhq/common-all/lib";
 // import * as request from 'request'
 // import * as less from "less"
 // import * as temp from "temp"
@@ -64,6 +65,7 @@ export interface TransformMarkdownOptions {
   renderRefWithOutline?: boolean;
   onWillTransformMarkdown?: (markdown: string) => Promise<string>;
   onDidTransformMarkdown?: (markdown: string) => Promise<string>;
+  engine: DEngineClientV2;
 }
 
 const fileExtensionToLanguageMap = {
@@ -258,6 +260,7 @@ export async function transformMarkdown(
     renderRefWithOutline = false,
     onWillTransformMarkdown = null,
     onDidTransformMarkdown = null,
+    engine,
   }: TransformMarkdownOptions,
 ): Promise<TransformMarkdownOutput> {
   let lastOpeningCodeBlockFence: string = null;
@@ -633,14 +636,13 @@ export async function transformMarkdown(
       const LINK_REGEX = /^(\s*)\(\((?<ref>[^)]+)\)\)/;
       const refMatch = line.match(LINK_REGEX);
       if (refMatch) {
-        const root = fileDirectoryPath;
         const fileContent = ParserUtilsV2.getRemark()
           .use(dendronNoteRefPlugin, {
             renderWithOutline: renderRefWithOutline,
             replaceRefOpts: {
               forNoteRefInPreview: true,
             },
-            engine: ({ vaults: [root] } as unknown) as any,
+            engine,
           })
           .processSync(line)
           .toString();
@@ -838,6 +840,7 @@ export async function transformMarkdown(
                 imageDirectoryPath,
                 usePandocParser,
                 headingIdGenerator,
+                engine: this.engine,
               }));
 
               if (onDidTransformMarkdown) {
