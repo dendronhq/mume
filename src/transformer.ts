@@ -1,12 +1,15 @@
 // import * as Baby from "babyparse"
-import { dendronNoteRefPlugin, ParserUtilsV2 } from "@dendronhq/engine-server";
+import {
+  dendronNoteRefPlugin,
+  ParserUtilsV2,
+  DEngineClientV2,
+} from "@dendronhq/engine-server";
 import * as Baby from "babyparse";
 import * as fs from "fs";
 import * as less from "less";
 import * as path from "path";
 import * as request from "request";
 import * as temp from "temp";
-import { DEngineClientV2 } from "../../../dendron/packages/common-server/node_modules/@dendronhq/common-all/lib";
 // import * as request from 'request'
 // import * as less from "less"
 // import * as temp from "temp"
