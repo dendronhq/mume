@@ -1,2 +1,2 @@
-npm version 0.14
+npm version patch
 npm publish
