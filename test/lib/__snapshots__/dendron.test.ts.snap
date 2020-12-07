@@ -5,27 +5,49 @@ Object {
   "JSAndCssFiles": Array [],
   "html": "<div class=\\"portal-container\\">
 <div class=\\"portal-head\\">
-    <div class=\\"portal-backlink\\">
-        <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">ref</span></div>
-        <a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/ref.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
-    </div>
+<div class=\\"portal-backlink\\">
+<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
+<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
-<div id=\\"portal-parent-{{include.anchor}}\\" class=\\"portal-parent\\">
-    <div class=\\"portal-parent-fader-top\\"></div>
-    <div class=\\"portal-parent-fader-bottom\\"></div>        
-<h1>h1 header</h1>
-<p>h1 text</p>
-<h1>h2 header</h1>
-<p>h2 text</p>
+</div>
+<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
+<div class=\\"portal-parent-fader-top\\"></div>
+<div class=\\"portal-parent-fader-bottom\\"></div>        
+<h1>Header1</h1>
+<p>body1</p>
+<h1>Header2</h1>
+<p>body2</p>
 </div>    
 </div>
 <hr>
 <p><code>code span</code>some text</p>
 ",
-  "markdown": "((ref:[[ref]]))
+  "markdown": "((ref:[[alpha]]))
 ---
 
 \`code span\`some text",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;
+
+exports[`MarkdownEngine basic wiki link 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<p><a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/foo.md\\">foo</a></p>
+",
+  "markdown": "[[foo]]",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;
+
+exports[`MarkdownEngine rel link 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<p><a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/foobar#rel-link.md\\">foobar#rel-link</a></p>
+",
+  "markdown": "[[foobar#rel-link]]",
   "tocHTML": "",
   "yamlConfig": Object {},
 }
@@ -36,22 +58,24 @@ Object {
   "JSAndCssFiles": Array [],
   "html": "<div class=\\"portal-container\\">
 <div class=\\"portal-head\\">
-    <div class=\\"portal-backlink\\">
-        <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">ref</span></div>
-        <a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/ref.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
-    </div>
+<div class=\\"portal-backlink\\">
+<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
+<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
-<div id=\\"portal-parent-{{include.anchor}}\\" class=\\"portal-parent\\">
-    <div class=\\"portal-parent-fader-top\\"></div>
-    <div class=\\"portal-parent-fader-bottom\\"></div>        
-<h1>h2 header</h1>
-<p>h2 text</p>
+</div>
+<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
+<div class=\\"portal-parent-fader-top\\"></div>
+<div class=\\"portal-parent-fader-bottom\\"></div>        
+<h1>Header1</h1>
+<p>body1</p>
+<h1>Header2</h1>
+<p>body2</p>
 </div>    
 </div>
 <hr>
 <p><code>code span</code>some text</p>
 ",
-  "markdown": "((ref:[[ref]]#h2 header))
+  "markdown": "((ref:[[alpha]]#Header1))
 ---
 
 \`code span\`some text",
@@ -65,21 +89,23 @@ Object {
   "JSAndCssFiles": Array [],
   "html": "<div class=\\"portal-container\\">
 <div class=\\"portal-head\\">
-    <div class=\\"portal-backlink\\">
-        <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">ref</span></div>
-        <a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/ref.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
-    </div>
+<div class=\\"portal-backlink\\">
+<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
+<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
-<div id=\\"portal-parent-{{include.anchor}}\\" class=\\"portal-parent\\">
-    <div class=\\"portal-parent-fader-top\\"></div>
-    <div class=\\"portal-parent-fader-bottom\\"></div>        
-<p>h2 text</p>
+</div>
+<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
+<div class=\\"portal-parent-fader-top\\"></div>
+<div class=\\"portal-parent-fader-bottom\\"></div>        
+<p>body1</p>
+<h1>Header2</h1>
+<p>body2</p>
 </div>    
 </div>
 <hr>
 <p><code>code span</code>some text</p>
 ",
-  "markdown": "((ref:[[ref]]#h2 header,1))
+  "markdown": "((ref:[[alpha]]#Header1,1))
 ---
 
 \`code span\`some text",
@@ -89,27 +115,30 @@ Object {
 `;
 
 exports[`MarkdownEngine with wildcard 1`] = `
-"<div class=\\"portal-container\\">
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<div class=\\"portal-container\\">
 <div class=\\"portal-head\\">
-    <div class=\\"portal-backlink\\">
-        <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">ref</span></div>
-        <a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/ref.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
-    </div>
+<div class=\\"portal-backlink\\">
+<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
+<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
-<div id=\\"portal-parent-{{include.anchor}}\\" class=\\"portal-parent\\">
-    <div class=\\"portal-parent-fader-top\\"></div>
-    <div class=\\"portal-parent-fader-bottom\\"></div>        
-<p>h1 text</p>
+</div>
+<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
+<div class=\\"portal-parent-fader-top\\"></div>
+<div class=\\"portal-parent-fader-bottom\\"></div>        
+<h1>Header1</h1>
+<p>body1</p>
 </div>    
 </div>
 <hr>
 <p><code>code span</code>some text</p>
-"
-`;
+",
+  "markdown": "((ref:[[alpha]]#Header1:#*))
+---
 
-exports[`MarkdownEngine without outline  1`] = `
-"<p>h1 text</p>
-<hr>
-<p><code>code span</code>some text</p>
-"
+\`code span\`some text",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
 `;

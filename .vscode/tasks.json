@@ -10,6 +10,12 @@
       },
       "problemMatcher": ["$tsc-watch"],
       "isBackground": true
-    }
+    },
+    {
+      "label": "npm:test:watch",
+      "command": "npm run test:watch -- ${relativeFile} -u",
+      "type": "shell",
+      "problemMatcher": [],
+    },
   ]
 }

@@ -635,9 +635,9 @@ export async function transformMarkdown(
         }
       }
 
-      // DENDRON NOTE REFS
-      const LINK_REGEX = /^(\s*)\(\((?<ref>[^)]+)\)\)/;
-      const refMatch = line.match(LINK_REGEX);
+      // DENDRON START
+      const REF_LINK_REGEX = /^(\s*)\(\((?<ref>[^)]+)\)\)/;
+      const refMatch = line.match(REF_LINK_REGEX);
       if (refMatch) {
         const fileContent = ParserUtilsV2.getRemark()
           .use(dendronNoteRefPlugin, {

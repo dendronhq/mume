@@ -1,17 +1,26 @@
 // tslint:disable no-var-requires member-ordering
 
+import { DEngineClientV2 } from "@dendronhq/common-all";
+import { ParserUtilsV2 } from "@dendronhq/engine-server";
 import * as cheerio from "cheerio";
 import { execFile } from "child_process";
 import * as fs from "fs";
 import * as path from "path";
 import * as request from "request";
 import * as slash from "slash";
-import * as YAML from "yamljs";
 import * as vscode from "vscode";
-
+import * as YAML from "yamljs";
 import { CodeChunkData } from "./code-chunk-data";
+import useMarkdownItCodeFences from "./custom-markdown-it-features/code-fences";
+import useMarkdownItCriticMarkup from "./custom-markdown-it-features/critic-markup";
+import useMarkdownItEmoji from "./custom-markdown-it-features/emoji";
+import useMarkdownItHTML5Embed from "./custom-markdown-it-features/html5-embed";
+import useMarkdownItMath from "./custom-markdown-it-features/math";
+import useMarkdownItWikilink from "./custom-markdown-it-features/wikilink";
 import { ebookConvert } from "./ebook-convert";
 import HeadingIdGenerator from "./heading-id-generator";
+import { parseAttributes, stringifyAttributes } from "./lib/attributes";
+import { normalizeBlockInfo, parseBlockInfo } from "./lib/block-info";
 import { markdownConvert } from "./markdown-convert";
 import {
   defaultMarkdownEngineConfig,
@@ -19,17 +28,6 @@ import {
 } from "./markdown-engine-config";
 import { pandocConvert } from "./pandoc-convert";
 import { princeConvert } from "./prince-convert";
-import { toc } from "./toc";
-import { HeadingData, transformMarkdown } from "./transformer";
-import * as utility from "./utility";
-
-import useMarkdownItCodeFences from "./custom-markdown-it-features/code-fences";
-import useMarkdownItCriticMarkup from "./custom-markdown-it-features/critic-markup";
-import useMarkdownItEmoji from "./custom-markdown-it-features/emoji";
-import useMarkdownItHTML5Embed from "./custom-markdown-it-features/html5-embed";
-import useMarkdownItMath from "./custom-markdown-it-features/math";
-import useMarkdownItWikilink from "./custom-markdown-it-features/wikilink";
-
 import enhanceWithCodeBlockStyling from "./render-enhancers/code-block-styling";
 import enhanceWithEmbeddedLocalImages from "./render-enhancers/embedded-local-images";
 import enhanceWithEmbeddedSvgs from "./render-enhancers/embedded-svgs";
@@ -43,11 +41,10 @@ import enhanceWithFencedCodeChunks, {
 import enhanceWithFencedDiagrams from "./render-enhancers/fenced-diagrams";
 import enhanceWithFencedMath from "./render-enhancers/fenced-math";
 import enhanceWithResolvedImagePaths from "./render-enhancers/resolved-image-paths";
-
-import { parseAttributes, stringifyAttributes } from "./lib/attributes";
-import { normalizeBlockInfo, parseBlockInfo } from "./lib/block-info";
+import { toc } from "./toc";
+import { HeadingData, transformMarkdown } from "./transformer";
+import * as utility from "./utility";
 import { removeFileProtocol } from "./utility";
-import { DEngineClientV2 } from "../../../dendron/packages/common-server/node_modules/@dendronhq/common-all/lib";
 
 const extensionDirectoryPath = utility.extensionDirectoryPath;
 const MarkdownIt = require(path.resolve(
@@ -2943,7 +2940,13 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       yamlConfig = {};
     }
 
-    outputString = fm.content + outputString;
+    // @ts-ignore
+    const remark = ParserUtilsV2.getRemark({
+      dendronLinksOpts: { toMdEnhancedPreview: true },
+    });
+    const out = remark.processSync(outputString).toString();
+    // const out = outputString;
+    outputString = fm.content + out;
 
     /**
      * render markdown to html

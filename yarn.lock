@@ -204,11 +204,12 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dendronhq/common-all@^0.15.1-alpha.0", "@dendronhq/common-all@^0.15.1-alpha.1":
-  version "0.15.1-alpha.1"
-  resolved "https://registry.yarnpkg.com/@dendronhq/common-all/-/common-all-0.15.1-alpha.1.tgz#9485f9fd2c306dd109e341403dc78a1b21026340"
-  integrity sha512-HXhAFcSE5FygD8aXyye72t2eXZ2XrqzHJ8dYSzHuhiSk2uf0cU6U49YHSFWRrT5HoqYrpill2fd9oF2Hoovwiw==
+"@dendronhq/common-all@0.18.2-alpha.2", "@dendronhq/common-all@^0.18.2-alpha.2":
+  version "0.18.2-alpha.2"
+  resolved "https://registry.yarnpkg.com/@dendronhq/common-all/-/common-all-0.18.2-alpha.2.tgz#9cd577b87b8c8d3d6751379fc68286d2e461a8d4"
+  integrity sha512-8O+v/NxBQUNOuT6m5dL0Xbbqq+o1+346p/eCh4QDAjYelLXfJ00IgTbfiSTbfQEOT50Sv7UQ+yQpIDAS/zc0sg==
   dependencies:
+    "@types/github-slugger" "^1.3.0"
     "@types/jest" "^23.3.3"
     "@types/lodash" "^4.14.152"
     "@types/luxon" "^1.25.0"
@@ -221,6 +222,7 @@
     "@types/uuid" "^8.0.0"
     "@types/yamljs" "^0.2.31"
     dropbox "^4.0.30"
+    github-slugger "^1.3.0"
     gray-matter "^4.0.2"
     isomorphic-fetch "^2.2.1"
     js-yaml "^3.14.0"
@@ -236,12 +238,12 @@
     vscode-uri "^2.1.2"
     yamljs "^0.3.0"
 
-"@dendronhq/common-server@^0.15.1-alpha.0":
-  version "0.15.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@dendronhq/common-server/-/common-server-0.15.1-alpha.0.tgz#1fbc8ba56976c73b3b72c2ebdd7e54077478a234"
-  integrity sha512-l64JwUTNpLnMAw9wG2nKQXxUFR7u0aQk5TZe8EEvsyILt1AV7IYsArnu2O3jv4a76Lp8lePABWVz/mpJXX7unQ==
+"@dendronhq/common-server@^0.18.2-alpha.2":
+  version "0.18.2-alpha.2"
+  resolved "https://registry.yarnpkg.com/@dendronhq/common-server/-/common-server-0.18.2-alpha.2.tgz#9b4df2f1f15b08b653a342fd680f4ffe422b3251"
+  integrity sha512-RbOfkLbs1F02l7UdXlFLTbtCBd/DvZy2abx9CpvI7jwW8HNLTlUTF505bZvGrK5NI4Y7Jo/MVj8eG6rWVES2AA==
   dependencies:
-    "@dendronhq/common-all" "^0.15.1-alpha.0"
+    "@dendronhq/common-all" "^0.18.2-alpha.2"
     "@types/fs-extra" "^9.0.1"
     "@types/jest" "^23.3.3"
     "@types/js-yaml" "^3.12.5"
@@ -258,27 +260,28 @@
     minimatch "^3.0.4"
     pino "^6.3.2"
     request-promise "^4.2.6"
+    simple-git "^2.24.0"
     tmp "^0.2.1"
     vscode-uri "^2.1.2"
 
-"@dendronhq/common-test-utils@^0.15.1-alpha.1":
-  version "0.15.1-alpha.1"
-  resolved "https://registry.yarnpkg.com/@dendronhq/common-test-utils/-/common-test-utils-0.15.1-alpha.1.tgz#bfede7eb10d1d6eac65c73503aef886d04908de1"
-  integrity sha512-e77WNQGBfXTsTBeFoDZYz8seH5tDWhVjiWmVCzogU8A4C8FTxlp9lDhRiPTe7uiPciodAWV6+VRMFrzQNPAoVQ==
+"@dendronhq/common-test-utils@0.18.2-alpha.2", "@dendronhq/common-test-utils@^0.18.2-alpha.2":
+  version "0.18.2-alpha.2"
+  resolved "https://registry.yarnpkg.com/@dendronhq/common-test-utils/-/common-test-utils-0.18.2-alpha.2.tgz#56f595d8f7e9cf7200aad9c95f6f8db68881c498"
+  integrity sha512-4L276BMQMmZ9ClYiKTe6JXSsEUjEvXzmoNtQURJ+wL+SrWmBnAHXj24uHw+UH+qq4lWWTgFa3x/UmYvNQ6rTmg==
   dependencies:
-    "@dendronhq/common-all" "^0.15.1-alpha.1"
-    "@dendronhq/common-server" "^0.15.1-alpha.0"
+    "@dendronhq/common-all" "^0.18.2-alpha.2"
+    "@dendronhq/common-server" "^0.18.2-alpha.2"
     fs-extra "^9.0.1"
     lodash "^4.17.20"
 
-"@dendronhq/engine-server@0.15.1-alpha.1":
-  version "0.15.1-alpha.1"
-  resolved "https://registry.yarnpkg.com/@dendronhq/engine-server/-/engine-server-0.15.1-alpha.1.tgz#25eefbcd0e97579bc1f1728ea218367a1d2215e6"
-  integrity sha512-IFkSPvzDLGxFK1/MokPYBzK37QsifaHOCx1UdDuIr2LHM43Wn0fTCFLxCJNno1+ILLl14T90WsULKvPkZda95A==
+"@dendronhq/engine-server@0.18.2-alpha.2":
+  version "0.18.2-alpha.2"
+  resolved "https://registry.yarnpkg.com/@dendronhq/engine-server/-/engine-server-0.18.2-alpha.2.tgz#2eac47de86bc39d791177841568ab3b4894ea589"
+  integrity sha512-zjdq/DItM1gY/7J7l4yebKRNCXRYA5mGvkjsaKgFNtQCWz46KDAVZj3oYUbaF1zX7E8/yRhDLmCHX4/O0X6hzg==
   dependencies:
-    "@dendronhq/common-all" "^0.15.1-alpha.1"
-    "@dendronhq/common-server" "^0.15.1-alpha.0"
-    "@dendronhq/common-test-utils" "^0.15.1-alpha.1"
+    "@dendronhq/common-all" "^0.18.2-alpha.2"
+    "@dendronhq/common-server" "^0.18.2-alpha.2"
+    "@dendronhq/common-test-utils" "^0.18.2-alpha.2"
     "@types/fs-extra" "^9.0.1"
     "@types/jest" "^23.3.3"
     "@types/klaw" "^3.0.1"
@@ -467,6 +470,18 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@kwsites/file-exists@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@kwsites/file-exists/-/file-exists-1.1.1.tgz#ad1efcac13e1987d8dbaf235ef3be5b0d96faa99"
+  integrity sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==
+  dependencies:
+    debug "^4.1.1"
+
+"@kwsites/promise-deferred@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@kwsites/promise-deferred/-/promise-deferred-1.1.1.tgz#8ace5259254426ccef57f3175bc64ed7095ed919"
+  integrity sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==
+
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
   resolved "https://registry.npm.taobao.org/@nodelib/fs.scandir/download/@nodelib/fs.scandir-2.1.3.tgz#3a582bdb53804c6ba6d146579c46e52130cf4a3b"
@@ -546,6 +561,11 @@
   integrity sha512-jp0RI6xfZpi5JL8v7WQwpBEQTq63RqW2kxwTZt+m27LcJqQdPVU1yGnT1ZI4EtCDynQQJtIGyQahkiCGCS7e+A==
   dependencies:
     "@types/node" "*"
+
+"@types/github-slugger@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@types/github-slugger/-/github-slugger-1.3.0.tgz#16ab393b30d8ae2a111ac748a015ac05a1fc5524"
+  integrity sha512-J/rMZa7RqiH/rT29TEVZO4nBoDP9XJOjnbbIofg7GQKs4JIduEO3WLpte+6WeUz/TcrXKlY+bM7FYrp8yFB+3g==
 
 "@types/glob@^7.1.1":
   version "7.1.1"
@@ -1664,6 +1684,13 @@ debug@^3.1.0:
   dependencies:
     ms "^2.1.1"
 
+debug@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.1.tgz#f0d229c505e0c6d8c49ac553d1b13dc183f6b2ee"
+  integrity sha512-doEwdvm4PCeK4K3RQN2ZC2BYUBaxwLARCqZmMjtF8a51J2Rb0xpVloFRnCODwqjpwnAoao4pelN8l3RJdv3gRQ==
+  dependencies:
+    ms "2.1.2"
+
 decamelize@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/decamelize/download/decamelize-1.2.0.tgz?cache=0&sync_timestamp=1580010393599&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdecamelize%2Fdownload%2Fdecamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
@@ -2446,7 +2473,7 @@ git-hooks-list@1.0.3:
   resolved "https://registry.npm.taobao.org/git-hooks-list/download/git-hooks-list-1.0.3.tgz#be5baaf78203ce342f2f844a9d2b03dba1b45156"
   integrity sha1-vluq94IDzjQvL4RKnSsD26G0UVY=
 
-github-slugger@^1.2.1:
+github-slugger@^1.2.1, github-slugger@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.3.0.tgz#9bd0a95c5efdfc46005e82a906ef8e2a059124c9"
   integrity sha512-gwJScWVNhFYSRDvURk/8yhcFBee6aFjye2a7Lhb2bUyRulpIoek9p0I9Kt7PT67d/nUlZbFu8L9RLiA0woQN8Q==
@@ -4114,7 +4141,7 @@ ms@2.0.0:
   resolved "https://registry.npm.taobao.org/ms/download/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
-ms@^2.0.0, ms@^2.1.1:
+ms@2.1.2, ms@^2.0.0, ms@^2.1.1:
   version "2.1.2"
   resolved "https://registry.npm.taobao.org/ms/download/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
@@ -5264,6 +5291,15 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.3"
   resolved "https://registry.npm.taobao.org/signal-exit/download/signal-exit-3.0.3.tgz?cache=0&sync_timestamp=1585253373618&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsignal-exit%2Fdownload%2Fsignal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=
+
+simple-git@^2.24.0:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.24.0.tgz#7ee22898d4155b3917b301ab97e937c52a33247d"
+  integrity sha512-nF31Xai5lTYgRCiSJ1lHzK0Vk9jWOvAFW12bdBaWy2bhodio04eOWYurvyM/nTBYsPIiQl3PFvdod5TRcPvzww==
+  dependencies:
+    "@kwsites/file-exists" "^1.1.1"
+    "@kwsites/promise-deferred" "^1.1.1"
+    debug "^4.3.1"
 
 sisteransi@^1.0.4:
   version "1.0.5"

@@ -1,32 +1,52 @@
 {
   "version": "0.2.0",
   "configurations": [
-{
-    "type": "node",
-    "request": "launch",
-    "name": "Debug file",
-    "program": "${workspaceFolder:mume}/node_modules/jest/bin/jest.js",
-    "cwd": "${workspaceFolder:mume}",
-    "args": ["--runInBand", "out/test/lib/dendron.test.js", "-u"],
-  },
-  // {
-  //   "type": "node",
-  //   "request": "launch",
-  //   "name": "Debug Jest Tests",
-  //   "cwd": "${workspaceRoot}",
-  //   "args": [
-  //     "--inspect-brk",
-  //     "${workspaceRoot}/node_modules/.bin/jest",
-  //     "--runInBand",
-  //     "--config",
-  //     "${workspaceRoot}/jest.config.json"
-  //   ],
-  //   "console": "integratedTerminal",
-  //   "internalConsoleOptions": "neverOpen"
-  // },
-]
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug file",
+      "program": "${workspaceFolder:mume}/node_modules/jest/bin/jest.js",
+      "cwd": "${workspaceFolder:mume}",
+      "args": [
+        "--runInBand",
+        "out/test/lib/dendron.test.js",
+        "-u"
+      ],
+    },
+    {
+      "name": "Debug Jest Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/node_modules/.bin/jest",
+        "--runInBand",
+        "--coverage",
+        "false"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "debug one test",
+      "program": "${workspaceFolder:mume}/node_modules/jest/bin/jest.js",
+      "sourceMaps": true,
+      "smartStep": true,
+      "cwd": "${workspaceFolder:mume}",
+      "args": [
+        "--findRelatedTests",
+        "--runInBand",
+        "${relativeFile}",
+        "-u"
+      ],
+      "outFiles": [
+        "${workspaceFolder:mume}/**/*.js"
+      ]
+    }
+  ]
 }
-
 // {
 //   "type": "node",
 //   "request": "launch",
