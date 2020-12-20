@@ -1,7 +1,7 @@
 // tslint:disable no-var-requires member-ordering
 
-import { DEngineClientV2 } from "@dendronhq/common-all";
-import { ParserUtilsV2 } from "@dendronhq/engine-server";
+import { DEngineClientV2, VaultUtils } from "@dendronhq/common-all";
+import { DendronASTDest, MDUtilsV4 } from "@dendronhq/engine-server";
 import * as cheerio from "cheerio";
 import { execFile } from "child_process";
 import * as fs from "fs";
@@ -2940,11 +2940,18 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       yamlConfig = {};
     }
 
-    // @ts-ignore
-    const remark = ParserUtilsV2.getRemark({
-      dendronLinksOpts: { toMdEnhancedPreview: true },
+    const { wsRoot, vaultsv3: vaults } = this.engine;
+    const vault = VaultUtils.getByVaultPath({
+      wsRoot,
+      vaults,
+      vaultPath: this.fileDirectoryPath,
     });
-    const out = remark.processSync(outputString).toString();
+    const proc = MDUtilsV4.procFull({
+      dest: DendronASTDest.MD_ENHANCED_PREVIEW,
+      engine: this.engine,
+      vault,
+    });
+    const out = proc.processSync(outputString).toString();
     // const out = outputString;
     outputString = fm.content + out;
 

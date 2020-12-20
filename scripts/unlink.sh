@@ -1,4 +1,4 @@
-VERSION="0.18.2-alpha.2"
+VERSION="0.20.1-alpha.11"
 
 pkg1="@dendronhq/engine-server@$VERSION"
 pkg2="@dendronhq/common-all@$VERSION"

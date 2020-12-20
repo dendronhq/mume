@@ -9,8 +9,12 @@ import {
   NOTE_PRESETS_V4,
   runEngineTestV4,
 } from "@dendronhq/common-test-utils";
-import { DEngineClientV2, DVault, WorkspaceOpts } from "@dendronhq/common-all";
-import { VaultUtils } from "../../../../dendron/packages/engine-server/node_modules/@dendronhq/common-server/lib";
+import {
+  VaultUtils,
+  DEngineClientV2,
+  DVault,
+  WorkspaceOpts,
+} from "@dendronhq/common-all";
 
 function hasOutline(out: { html: string }) {
   return out.html.indexOf("portal-container") >= 0;
@@ -26,8 +30,10 @@ async function createMdEngine(opts: {
 }) {
   const configPath = path.resolve(os.homedir(), ".mume"); // use here your own config folder, default is "~/.mume"
   await mume.init(configPath); // default uses "~/.mume"
+  debugger;
   const mdEngine = new mume.MarkdownEngine({
-    filePath: "",
+    // need to set because we get vault based on filepath
+    filePath: path.join(opts.projectDirectoryPath, "stub"),
     projectDirectoryPath: opts.projectDirectoryPath,
     config: {
       configPath: configPath,
@@ -48,9 +54,9 @@ async function parse(
 ) {
   const { vaults, wsRoot, engine } = opts;
   const vault = vaults[0];
-  const vpath = VaultUtils.normVaultPath({ wsRoot, vault });
+  // const vpath = VaultUtils.normVaultPath({ wsRoot, vault });
   const mdEngine = await createMdEngine({
-    projectDirectoryPath: vpath,
+    projectDirectoryPath: path.join(wsRoot, vault.fsPath),
     engine,
   });
   const out = await mdEngine.parseMD(text, {
@@ -72,10 +78,12 @@ describe.only("MarkdownEngine", () => {
       async (opts) => {
         const out = await parse("[[foo]]", opts);
         expect(out).toMatchSnapshot();
+        const wsRoot = opts.wsRoot;
+        const vpath = path.join(wsRoot, opts.vaults[0].fsPath);
         expect(
           await AssertUtils.assertInString({
             body: out.html,
-            match: ["foo.md"],
+            match: [`file://${vpath}/foo.md`],
           }),
         ).toBeTruthy();
         return [];
@@ -121,34 +129,14 @@ describe.only("MarkdownEngine", () => {
 
   test("rel link", async () => {
     await runEngineTestV4(
-      async ({ engine }) => {
-        const configPath = path.resolve(os.homedir(), ".mume"); // use here your own config folder, default is "~/.mume"
-        await mume.init(configPath); // default uses "~/.mume"
-        const mdEngine = new mume.MarkdownEngine({
-          filePath: "./test/integration/fixtures/dendron/ref.md",
-          projectDirectoryPath: "./test/integration/fixtures/dendron",
-          config: {
-            configPath: configPath,
-            previewTheme: "github-light.css",
-            // revealjsTheme: "white.css"
-            codeBlockTheme: "default.css",
-            printBackground: true,
-            enableScriptExecution: true, // <= for running code chunks
-          },
-          engine,
-        });
-        const out = await mdEngine.parseMD("[[foobar#rel-link]]", {
-          isForPreview: false,
-          useRelativeFilePath: false,
-          hideFrontMatter: false,
-        });
+      async (opts) => {
+        const out = await parse("[[foobar#rel-link]]", opts);
         expect(out).toMatchSnapshot();
-        // expect(_.trim(out.markdown)).toEqual("[foobar](foobar#rel-link)");
+        expect(out.html.indexOf('vault1/foobar.md"') >= 0).toBeTruthy();
         return [];
       },
       {
-        expect,
-        createEngine,
+        ...testOpts,
       },
     );
   });

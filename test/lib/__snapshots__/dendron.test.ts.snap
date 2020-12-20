@@ -3,11 +3,12 @@
 exports[`MarkdownEngine basic 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<div class=\\"portal-container\\">
+  "html": "<h2></h2>
+<div class=\\"portal-container\\">
 <div class=\\"portal-head\\">
 <div class=\\"portal-backlink\\">
 <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+<a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-91482-HrDQWaEjho52/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
 </div>
 <div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
@@ -19,7 +20,6 @@ Object {
 <p>body2</p>
 </div>    
 </div>
-<hr>
 <p><code>code span</code>some text</p>
 ",
   "markdown": "((ref:[[alpha]]))
@@ -34,7 +34,7 @@ Object {
 exports[`MarkdownEngine basic wiki link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/foo.md\\">foo</a></p>
+  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-91482-WbkbYlVet8np/vault1/foo.md\\">foo</a></p>
 ",
   "markdown": "[[foo]]",
   "tocHTML": "",
@@ -45,7 +45,7 @@ Object {
 exports[`MarkdownEngine rel link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/test/integration/fixtures/dendron/foobar#rel-link.md\\">foobar#rel-link</a></p>
+  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-91482-UpipZsgoi1md/vault1/foobar.md\\">foobar</a></p>
 ",
   "markdown": "[[foobar#rel-link]]",
   "tocHTML": "",
@@ -56,11 +56,12 @@ Object {
 exports[`MarkdownEngine with header 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<div class=\\"portal-container\\">
+  "html": "<h2></h2>
+<div class=\\"portal-container\\">
 <div class=\\"portal-head\\">
 <div class=\\"portal-backlink\\">
 <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
 </div>
 <div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
@@ -72,7 +73,6 @@ Object {
 <p>body2</p>
 </div>    
 </div>
-<hr>
 <p><code>code span</code>some text</p>
 ",
   "markdown": "((ref:[[alpha]]#Header1))
@@ -87,11 +87,12 @@ Object {
 exports[`MarkdownEngine with header offset 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<div class=\\"portal-container\\">
+  "html": "<h2></h2>
+<div class=\\"portal-container\\">
 <div class=\\"portal-head\\">
 <div class=\\"portal-backlink\\">
 <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
 </div>
 <div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
@@ -102,7 +103,6 @@ Object {
 <p>body2</p>
 </div>    
 </div>
-<hr>
 <p><code>code span</code>some text</p>
 ",
   "markdown": "((ref:[[alpha]]#Header1,1))
@@ -117,11 +117,12 @@ Object {
 exports[`MarkdownEngine with wildcard 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<div class=\\"portal-container\\">
+  "html": "<h2></h2>
+<div class=\\"portal-container\\">
 <div class=\\"portal-head\\">
 <div class=\\"portal-backlink\\">
 <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
 </div>
 <div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
@@ -131,7 +132,6 @@ Object {
 <p>body1</p>
 </div>    
 </div>
-<hr>
 <p><code>code span</code>some text</p>
 ",
   "markdown": "((ref:[[alpha]]#Header1:#*))

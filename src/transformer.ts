@@ -1,9 +1,5 @@
 // import * as Baby from "babyparse"
-import {
-  dendronNoteRefPlugin,
-  ParserUtilsV2,
-  DEngineClientV2,
-} from "@dendronhq/engine-server";
+import { DEngineClientV2 } from "@dendronhq/engine-server";
 import * as Baby from "babyparse";
 import * as fs from "fs";
 import * as less from "less";
@@ -636,26 +632,26 @@ export async function transformMarkdown(
       }
 
       // DENDRON START
-      const REF_LINK_REGEX = /^(\s*)\(\((?<ref>[^)]+)\)\)/;
-      const refMatch = line.match(REF_LINK_REGEX);
-      if (refMatch) {
-        const fileContent = ParserUtilsV2.getRemark()
-          .use(dendronNoteRefPlugin, {
-            renderWithOutline: renderRefWithOutline,
-            replaceRefOpts: {
-              forNoteRefInPreview: true,
-            },
-            engine,
-          })
-          .processSync(line)
-          .toString();
-        let output2: string = fileContent;
-        output2 = "\n" + output2 + "  ";
-        i = end + 1;
-        lineNo = lineNo + 1;
-        outputString = outputString + output2 + "\n";
-        continue;
-      }
+      // const REF_LINK_REGEX = /^(\s*)\(\((?<ref>[^)]+)\)\)/;
+      // const refMatch = line.match(REF_LINK_REGEX);
+      // if (refMatch) {
+      //   const fileContent = ParserUtilsV2.getRemark()
+      //     .use(dendronNoteRefPlugin, {
+      //       renderWithOutline: renderRefWithOutline,
+      //       replaceRefOpts: {
+      //         forNoteRefInPreview: true,
+      //       },
+      //       engine,
+      //     })
+      //     .processSync(line)
+      //     .toString();
+      //   let output2: string = fileContent;
+      //   output2 = "\n" + output2 + "  ";
+      //   i = end + 1;
+      //   lineNo = lineNo + 1;
+      //   outputString = outputString + output2 + "\n";
+      //   continue;
+      // }
 
       // file import
       const importMatch = line.match(/^(\s*)\@import(\s+)\"([^\"]+)\";?/);
