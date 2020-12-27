@@ -2950,9 +2950,11 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       dest: DendronASTDest.MD_ENHANCED_PREVIEW,
       engine: this.engine,
       vault,
+      mathOpts: { katex: true },
     });
-    const out = proc.processSync(outputString).toString();
     // const out = outputString;
+    //const out = MDUtilsV4.procRehype({proc, mathjax: true}).processSync(outputString);
+    const out = proc.processSync(outputString).toString();
     outputString = fm.content + out;
 
     /**

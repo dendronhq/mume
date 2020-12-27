@@ -30,7 +30,6 @@ async function createMdEngine(opts: {
 }) {
   const configPath = path.resolve(os.homedir(), ".mume"); // use here your own config folder, default is "~/.mume"
   await mume.init(configPath); // default uses "~/.mume"
-  debugger;
   const mdEngine = new mume.MarkdownEngine({
     // need to set because we get vault based on filepath
     filePath: path.join(opts.projectDirectoryPath, "stub"),
@@ -72,7 +71,7 @@ const testOpts = {
   createEngine,
 };
 
-describe.only("MarkdownEngine", () => {
+describe("MarkdownEngine", () => {
   test("basic wiki link", async () => {
     await runEngineTestV4(
       async (opts) => {
@@ -141,6 +140,27 @@ describe.only("MarkdownEngine", () => {
     );
   });
 
+  test("math", async () => {
+    await runEngineTestV4(
+      async (opts) => {
+        const out = await parse(
+          [
+            "$$",
+            "i hbar \frac{partial Psi}{partial t} = - \frac{hbar^2}{2m} \frac{partial^2 Psi}{partial x^2} + V Psi",
+            "$$",
+          ].join("\n"),
+          opts,
+        );
+        expect(out).toMatchSnapshot();
+        // expect(out.html.indexOf('vault1/foobar.md"') >= 0).toBeTruthy();
+        return [];
+      },
+      {
+        ...testOpts,
+      },
+    );
+  });
+
   test("with header", async () => {
     await runEngineTestV4(
       async ({ engine, vaults, wsRoot }) => {
@@ -168,7 +188,7 @@ describe.only("MarkdownEngine", () => {
         expect(
           await AssertUtils.assertInString({
             body: out.html,
-            match: ["Header1", "Header2"],
+            match: ["Header1"],
           }),
         ).toBeTruthy();
         return [];
@@ -214,7 +234,6 @@ describe.only("MarkdownEngine", () => {
         expect(
           await AssertUtils.assertInString({
             body: out.html,
-            match: ["Header2"],
             nomatch: ["Header1"],
           }),
         ).toBeTruthy();

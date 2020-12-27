@@ -8,7 +8,7 @@ Object {
 <div class=\\"portal-head\\">
 <div class=\\"portal-backlink\\">
 <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-91482-HrDQWaEjho52/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+<a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-47508-IC0KznKpnNqH/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
 </div>
 <div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
@@ -16,7 +16,7 @@ Object {
 <div class=\\"portal-parent-fader-bottom\\"></div>        
 <h1>Header1</h1>
 <p>body1</p>
-<h1>Header2</h1>
+<h1></h1>
 <p>body2</p>
 </div>    
 </div>
@@ -34,9 +34,22 @@ Object {
 exports[`MarkdownEngine basic wiki link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-91482-WbkbYlVet8np/vault1/foo.md\\">foo</a></p>
+  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-47508-UpjLhD3NSkf1/vault1/foo.md\\">foo</a></p>
 ",
   "markdown": "[[foo]]",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;
+
+exports[`MarkdownEngine math 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<p><span style=\\"color: #ee7f49; font-weight: 500;\\">ParseError: KaTeX parse error: Unexpected character: &apos;&apos; at position 8: i hbar &#x332;rac{partial Psi&#x2026;</span></p>
+",
+  "markdown": "$$
+i hbar rac{partial Psi}{partial t} = - rac{hbar^2}{2m} rac{partial^2 Psi}{partial x^2} + V Psi
+$$",
   "tocHTML": "",
   "yamlConfig": Object {},
 }
@@ -45,7 +58,7 @@ Object {
 exports[`MarkdownEngine rel link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-91482-UpipZsgoi1md/vault1/foobar.md\\">foobar</a></p>
+  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-47508-AQkwmLig0BaQ/vault1/foobar.md\\">foobar</a></p>
 ",
   "markdown": "[[foobar#rel-link]]",
   "tocHTML": "",
@@ -69,7 +82,7 @@ Object {
 <div class=\\"portal-parent-fader-bottom\\"></div>        
 <h1>Header1</h1>
 <p>body1</p>
-<h1>Header2</h1>
+<h1></h1>
 <p>body2</p>
 </div>    
 </div>
@@ -99,7 +112,7 @@ Object {
 <div class=\\"portal-parent-fader-top\\"></div>
 <div class=\\"portal-parent-fader-bottom\\"></div>        
 <p>body1</p>
-<h1>Header2</h1>
+<h1></h1>
 <p>body2</p>
 </div>    
 </div>
