@@ -1,6 +1,10 @@
 // tslint:disable no-var-requires member-ordering
 
-import { DEngineClientV2, VaultUtils } from "@dendronhq/common-all";
+import {
+  DEngineClientV2,
+  VaultUtils,
+  DendronError,
+} from "@dendronhq/common-all";
 import { DendronASTDest, MDUtilsV4 } from "@dendronhq/engine-server";
 import * as cheerio from "cheerio";
 import { execFile } from "child_process";
@@ -2941,6 +2945,10 @@ sidebarTOCBtn.addEventListener('click', function(event) {
     }
 
     const { wsRoot, vaultsv3: vaults } = this.engine;
+    const { error, data } = await this.engine.getConfig();
+    if (!data) {
+      throw new DendronError({ msg: "unable to get config", payload: error });
+    }
     const vault = VaultUtils.getByVaultPath({
       wsRoot,
       vaults,
@@ -2950,7 +2958,11 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       dest: DendronASTDest.MD_ENHANCED_PREVIEW,
       engine: this.engine,
       vault,
+      fname: path.basename(this.filePath, ".md"),
       mathOpts: { katex: true },
+      publishOpts: {
+        insertTitle: data.useFMTitle,
+      },
     });
     // const out = outputString;
     //const out = MDUtilsV4.procRehype({proc, mathjax: true}).processSync(outputString);
