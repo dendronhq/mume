@@ -2944,30 +2944,35 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       yamlConfig = {};
     }
 
-    const { wsRoot, vaultsv3: vaults } = this.engine;
-    const { error, data } = await this.engine.getConfig();
-    if (!data) {
-      throw new DendronError({ msg: "unable to get config", payload: error });
+    try {
+      const { wsRoot, vaultsv3: vaults } = this.engine;
+      const { error, data } = await this.engine.getConfig();
+      if (!data) {
+        throw new DendronError({ msg: "unable to get config", payload: error });
+      }
+      const vault = VaultUtils.getByVaultPath({
+        wsRoot,
+        vaults,
+        vaultPath: this.fileDirectoryPath,
+      });
+      const proc = MDUtilsV4.procFull({
+        dest: DendronASTDest.MD_ENHANCED_PREVIEW,
+        engine: this.engine,
+        vault,
+        fname: path.basename(this.filePath, ".md"),
+        mathOpts: { katex: true },
+        publishOpts: {
+          insertTitle: data.useFMTitle,
+        },
+      });
+      // const out = outputString;
+      //const out = MDUtilsV4.procRehype({proc, mathjax: true}).processSync(outputString);
+      const out = proc.processSync(outputString).toString();
+      outputString = fm.content + out;
+    } catch (err) {
+      // if no work, use normal output
+      outputString = fm.content + outputString;
     }
-    const vault = VaultUtils.getByVaultPath({
-      wsRoot,
-      vaults,
-      vaultPath: this.fileDirectoryPath,
-    });
-    const proc = MDUtilsV4.procFull({
-      dest: DendronASTDest.MD_ENHANCED_PREVIEW,
-      engine: this.engine,
-      vault,
-      fname: path.basename(this.filePath, ".md"),
-      mathOpts: { katex: true },
-      publishOpts: {
-        insertTitle: data.useFMTitle,
-      },
-    });
-    // const out = outputString;
-    //const out = MDUtilsV4.procRehype({proc, mathjax: true}).processSync(outputString);
-    const out = proc.processSync(outputString).toString();
-    outputString = fm.content + out;
 
     /**
      * render markdown to html
