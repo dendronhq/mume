@@ -98,6 +98,27 @@ describe("MarkdownEngine", () => {
     );
   });
 
+  test("wiki link with space", async () => {
+    await runEngineTestV4(
+      async (opts) => {
+        const out = await parse("[[foo bar]]", opts);
+        expect(out).toMatchSnapshot();
+        const wsRoot = opts.wsRoot;
+        const vpath = path.join(wsRoot, opts.vaults[0].fsPath);
+        expect(
+          await AssertUtils.assertInString({
+            body: out.html,
+            match: [`file://${vpath}/foo%20bar.md`],
+          }),
+        ).toBeTruthy();
+        return [];
+      },
+      {
+        ...testOpts,
+      },
+    );
+  });
+
   test("basic", async () => {
     await runEngineTestV4(
       async (opts) => {

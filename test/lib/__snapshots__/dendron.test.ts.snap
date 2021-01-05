@@ -8,7 +8,7 @@ Object {
 <div class=\\"portal-head\\">
 <div class=\\"portal-backlink\\">
 <div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-14255-6zhuubJZdiQk/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+<a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-21010-ZqbrTlb86NgC/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
 </div>
 </div>
 <div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
@@ -34,7 +34,7 @@ Object {
 exports[`MarkdownEngine basic wiki link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-14255-VmuxYzUf6GrL/vault1/foo.md\\">foo</a></p>
+  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-21010-XzwXkPRvqtPB/vault1/foo.md\\">foo</a></p>
 ",
   "markdown": "[[foo]]",
   "tocHTML": "",
@@ -58,9 +58,20 @@ $$",
 exports[`MarkdownEngine rel link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-14255-z1OBHEslqbw7/vault1/foobar.md\\">foobar</a></p>
+  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-21010-RZYAZyt2xSPi/vault1/foobar.md\\">foobar</a></p>
 ",
   "markdown": "[[foobar#rel-link]]",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;
+
+exports[`MarkdownEngine wiki link with space 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-21010-xu1tZAcEMYCv/vault1/foo%20bar.md\\">foo bar</a></p>
+",
+  "markdown": "[[foo bar]]",
   "tocHTML": "",
   "yamlConfig": Object {},
 }

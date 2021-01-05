@@ -49,6 +49,7 @@ import { toc } from "./toc";
 import { HeadingData, transformMarkdown } from "./transformer";
 import * as utility from "./utility";
 import { removeFileProtocol } from "./utility";
+import * as _ from "lodash";
 
 const extensionDirectoryPath = utility.extensionDirectoryPath;
 const MarkdownIt = require(path.resolve(
@@ -2965,13 +2966,11 @@ sidebarTOCBtn.addEventListener('click', function(event) {
           insertTitle: data.useFMTitle,
         },
       });
-      debugger;
       // const out = outputString;
       //const out = MDUtilsV4.procRehype({proc, mathjax: true}).processSync(outputString);
-      const out = proc.processSync(outputString).toString();
+      const out = _.trim(proc.processSync(outputString).toString());
       outputString = fm.content + out;
     } catch (err) {
-      debugger;
       // if no work, use normal output
       outputString = fm.content + outputString;
     }
