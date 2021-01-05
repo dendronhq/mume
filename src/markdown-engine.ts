@@ -2965,11 +2965,13 @@ sidebarTOCBtn.addEventListener('click', function(event) {
           insertTitle: data.useFMTitle,
         },
       });
+      debugger;
       // const out = outputString;
       //const out = MDUtilsV4.procRehype({proc, mathjax: true}).processSync(outputString);
       const out = proc.processSync(outputString).toString();
       outputString = fm.content + out;
     } catch (err) {
+      debugger;
       // if no work, use normal output
       outputString = fm.content + outputString;
     }

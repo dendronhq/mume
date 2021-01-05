@@ -2,7 +2,7 @@ import * as mume from "../../src/mume";
 import * as path from "path";
 import * as os from "os";
 import _ = require("lodash");
-import { DendronEngineV2 } from "@dendronhq/engine-server";
+import { DConfig, DendronEngineV2 } from "@dendronhq/engine-server";
 import {
   AssertUtils,
   NOTE_BODY_PRESETS_V4,
@@ -15,6 +15,8 @@ import {
   DVault,
   WorkspaceOpts,
 } from "@dendronhq/common-all";
+
+process.env["LOG_LEVEL"] = "error";
 
 function hasOutline(out: { html: string }) {
   return out.html.indexOf("portal-container") >= 0;
@@ -69,6 +71,9 @@ async function parse(
 const testOpts = {
   expect,
   createEngine,
+  preSetupHook: async ({ vaults, wsRoot }) => {
+    await DConfig.getOrCreate(wsRoot);
+  },
 };
 
 describe("MarkdownEngine", () => {
@@ -117,6 +122,7 @@ describe("MarkdownEngine", () => {
         ...testOpts,
         preSetupHook: async ({ vaults, wsRoot }) => {
           const vault = vaults[0];
+          await DConfig.getOrCreate(wsRoot);
           await await NOTE_PRESETS_V4.NOTE_WITH_NOTE_REF_TARGET.create({
             vault,
             wsRoot,
@@ -197,6 +203,7 @@ describe("MarkdownEngine", () => {
         expect,
         createEngine,
         preSetupHook: async ({ vaults, wsRoot }) => {
+          await DConfig.getOrCreate(wsRoot);
           const vault = vaults[0];
           await await NOTE_PRESETS_V4.NOTE_WITH_NOTE_REF_TARGET.create({
             vault,
@@ -244,6 +251,7 @@ describe("MarkdownEngine", () => {
         createEngine,
         preSetupHook: async ({ vaults, wsRoot }) => {
           const vault = vaults[0];
+          await DConfig.getOrCreate(wsRoot);
           await await NOTE_PRESETS_V4.NOTE_WITH_NOTE_REF_TARGET.create({
             vault,
             wsRoot,
@@ -291,6 +299,7 @@ describe("MarkdownEngine", () => {
         createEngine,
         preSetupHook: async ({ vaults, wsRoot }) => {
           const vault = vaults[0];
+          await DConfig.getOrCreate(wsRoot);
           await await NOTE_PRESETS_V4.NOTE_WITH_NOTE_REF_TARGET.create({
             vault,
             wsRoot,
