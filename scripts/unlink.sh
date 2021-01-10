@@ -1,8 +1,8 @@
 VERSION="0.22.2-alpha.0"
 
-ENGINE_VERSION=`cat ../../dendron/meta.json | jq -r '.["@dendronhq/engine-server"]'`
-COMMON_ALL_VERSION=`cat ../../dendron/meta.json | jq -r '.["@dendronhq/common-all"]'`
-COMMON_TEST_UTILS_VERSION=`cat ../../dendron/meta.json | jq -r '.["@dendronhq/common-test-utils"]'`
+ENGINE_VERSION=`cat ../dendron/meta.json | jq -r '.["@dendronhq/engine-server"]'`
+COMMON_ALL_VERSION=`cat ../dendron/meta.json | jq -r '.["@dendronhq/common-all"]'`
+COMMON_TEST_UTILS_VERSION=`cat ../dendron/meta.json | jq -r '.["@dendronhq/common-test-utils"]'`
 
 pkg1="@dendronhq/engine-server@$ENGINE_VERSION"
 pkg2="@dendronhq/common-all@$COMMON_ALL_VERSION"
