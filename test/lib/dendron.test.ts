@@ -76,7 +76,7 @@ const testOpts = {
   },
 };
 
-describe("MarkdownEngine", () => {
+describe.skip("MarkdownEngine", () => {
   test("basic wiki link", async () => {
     await runEngineTestV4(
       async (opts) => {

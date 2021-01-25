@@ -2959,6 +2959,7 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       const proc = MDUtilsV4.procFull({
         dest: DendronASTDest.MD_ENHANCED_PREVIEW,
         engine: this.engine,
+        config: data,
         vault,
         fname: path.basename(this.filePath, ".md"),
         mathOpts: { katex: true },
@@ -2966,8 +2967,6 @@ sidebarTOCBtn.addEventListener('click', function(event) {
           insertTitle: data.useFMTitle,
         },
       });
-      // const out = outputString;
-      //const out = MDUtilsV4.procRehype({proc, mathjax: true}).processSync(outputString);
       const out = _.trim(proc.processSync(outputString).toString());
       outputString = fm.content + out;
     } catch (err) {
