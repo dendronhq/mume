@@ -5,7 +5,11 @@ import {
   VaultUtils,
   DendronError,
 } from "@dendronhq/common-all";
-import { DendronASTDest, MDUtilsV4 } from "@dendronhq/engine-server";
+import {
+  DendronASTDest,
+  MDUtilsV4,
+  renderFromNoteProps,
+} from "@dendronhq/engine-server";
 import * as cheerio from "cheerio";
 import { execFile } from "child_process";
 import * as fs from "fs";
@@ -2956,18 +2960,25 @@ sidebarTOCBtn.addEventListener('click', function(event) {
         vaults,
         vaultPath: this.fileDirectoryPath,
       });
+      const fname = path.basename(this.filePath, ".md");
       const proc = MDUtilsV4.procFull({
         dest: DendronASTDest.MD_ENHANCED_PREVIEW,
         engine: this.engine,
         config: data,
         vault,
-        fname: path.basename(this.filePath, ".md"),
+        fname,
         mathOpts: { katex: true },
         publishOpts: {
           insertTitle: data.useFMTitle,
         },
       });
-      const out = _.trim(proc.processSync(outputString).toString());
+      const cout = renderFromNoteProps({
+        fname,
+        vault,
+        wsRoot,
+        notes: this.engine.notes,
+      });
+      const out = _.trim(proc.processSync(cout).toString());
       outputString = fm.content + out;
     } catch (err) {
       // if no work, use normal output
