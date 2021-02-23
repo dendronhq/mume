@@ -2972,13 +2972,15 @@ sidebarTOCBtn.addEventListener('click', function(event) {
           insertTitle: data.useFMTitle,
         },
       });
-      const cout = renderFromNoteProps({
-        fname,
-        vault,
-        wsRoot,
-        notes: this.engine.notes,
-      });
-      const out = _.trim(proc.processSync(cout).toString());
+      if (data.useNunjucks) {
+        outputString = renderFromNoteProps({
+          fname,
+          vault,
+          wsRoot,
+          notes: this.engine.notes,
+        });
+      }
+      const out = _.trim(proc.processSync(outputString).toString());
       outputString = fm.content + out;
     } catch (err) {
       // if no work, use normal output
