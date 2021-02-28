@@ -23,7 +23,7 @@ function hasOutline(out: { html: string }) {
 }
 
 function createEngine(opts: WorkspaceOpts) {
-  return DendronEngineV2.createV3(opts);
+  return DendronEngineV2.create(opts);
 }
 
 async function createMdEngine(opts: {
