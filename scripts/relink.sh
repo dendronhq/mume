@@ -9,6 +9,7 @@ yarn unlink @dendronhq/engine-server
 yarn unlink @dendronhq/common-all
 yarn unlink @dendronhq/common-test-utils
 echo "installing $pkg"
-yarn add --force $pkg1 &
-yarn add --force $pkg2 &
-yarn add --force $pkg3 &
+yarn add --force $pkg1 $pkg2 $pkg3
+#yarn add --force $pkg1 
+#yarn add --force $pkg2 
+#yarn add --force $pkg3 
