@@ -2967,7 +2967,6 @@ sidebarTOCBtn.addEventListener('click', function(event) {
         config: data,
         vault,
         fname,
-        mathOpts: { katex: true },
         publishOpts: {
           insertTitle: data.useFMTitle,
         },
