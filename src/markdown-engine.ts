@@ -2955,10 +2955,10 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       if (!data) {
         throw new DendronError({ msg: "unable to get config", payload: error });
       }
-      const vault = VaultUtils.getByVaultPath({
+      const vault = VaultUtils.getVaultByPath({
         wsRoot,
         vaults,
-        vaultPath: this.fileDirectoryPath,
+        fsPath: this.fileDirectoryPath,
       });
       const fname = path.basename(this.filePath, ".md");
       const proc = MDUtilsV4.procFull({
