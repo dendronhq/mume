@@ -2953,7 +2953,10 @@ sidebarTOCBtn.addEventListener('click', function(event) {
       const { wsRoot, vaultsv3: vaults } = this.engine;
       const { error, data } = await this.engine.getConfig();
       if (!data) {
-        throw new DendronError({ msg: "unable to get config", payload: error });
+        throw new DendronError({
+          message: "unable to get config",
+          payload: error,
+        });
       }
       const vault = VaultUtils.getVaultByPath({
         wsRoot,
@@ -2967,6 +2970,7 @@ sidebarTOCBtn.addEventListener('click', function(event) {
         config: data,
         vault,
         fname,
+        mathOpts: { katex: _.get(data, "useKatex", true) },
         publishOpts: {
           insertTitle: data.useFMTitle,
         },

@@ -48,9 +48,9 @@
     ]
   },
   "dependencies": {
-    "@dendronhq/common-all": "0.40.0",
-    "@dendronhq/common-test-utils": "0.40.0",
-    "@dendronhq/engine-server": "0.40.0",
+    "@dendronhq/common-all": "0.41.0",
+    "@dendronhq/common-test-utils": "0.41.0",
+    "@dendronhq/engine-server": "0.41.0",
     "babyparse": "^0.4.6",
     "cheerio": "^1.0.0-rc.3",
     "chrome-location": "^1.2.1",
