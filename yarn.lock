@@ -204,10 +204,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dendronhq/common-all@0.41.0", "@dendronhq/common-all@^0.41.0":
-  version "0.41.0"
-  resolved "https://registry.npmjs.org/@dendronhq/common-all/-/common-all-0.41.0.tgz#c6c489d3d6714ae569410664e99e70a3dc7415d3"
-  integrity sha512-EZ8ZTulV1bHPAcQEe/ucN4uN0caSxy2OsmMjAt4dRLsIlmNpjlAinp9eYe34cPI5FoUwENfebnYQxZfJds02tw==
+"@dendronhq/common-all@0.43.5-alpha.0", "@dendronhq/common-all@^0.43.5-alpha.0":
+  version "0.43.5-alpha.0"
+  resolved "http://localhost:4873/@dendronhq%2fcommon-all/-/common-all-0.43.5-alpha.0.tgz#7f30aa2e02d2a4fafdba12f3634eacabba83090e"
+  integrity sha512-Yiy5DS4XynczeGugWOygmusZzBtFadzZTPfeUKU8y6yHaaWXR4B9VAmF6ifSDh9sWMEYYz0JDlVTdYjXCSUUoQ==
   dependencies:
     "@types/github-slugger" "^1.3.0"
     "@types/lodash" "^4.14.152"
@@ -235,12 +235,12 @@
     vscode-uri "^2.1.2"
     yamljs "^0.3.0"
 
-"@dendronhq/common-server@^0.41.0":
-  version "0.41.0"
-  resolved "https://registry.npmjs.org/@dendronhq/common-server/-/common-server-0.41.0.tgz#135634debc756ad187bd672a303166d5c25d23fa"
-  integrity sha512-BizKvDJbQvrZeW92JHgZUYWZMyun906BD3YMQ8XYCZpV5w+95ymJaLCaP2dt1Dj9+QNKN589BqUkengYxCdHmA==
+"@dendronhq/common-server@^0.43.5-alpha.0":
+  version "0.43.5-alpha.0"
+  resolved "http://localhost:4873/@dendronhq%2fcommon-server/-/common-server-0.43.5-alpha.0.tgz#0a1ba07f07ce7d4bb86f21e19ad094c88135c22d"
+  integrity sha512-szVPGUvnMN2pf53WjmhRE1/FmPdXZp6/49WIHKwP1LwhtSNfreyc56zOVQeyUaLnY0HQDArc5ReUvbpkHf0oPg==
   dependencies:
-    "@dendronhq/common-all" "^0.41.0"
+    "@dendronhq/common-all" "^0.43.5-alpha.0"
     "@types/analytics-node" "^3.1.4"
     "@types/execa" "^2.0.0"
     "@types/express" "^4.17.11"
@@ -267,26 +267,26 @@
     tmp "^0.2.1"
     vscode-uri "^2.1.2"
 
-"@dendronhq/common-test-utils@0.41.0":
-  version "0.41.0"
-  resolved "https://registry.npmjs.org/@dendronhq/common-test-utils/-/common-test-utils-0.41.0.tgz#b6dd4fe2440c749796d86e1306dc9c6ccde7e104"
-  integrity sha512-YMLCGq86EyLUHxfb8r18lvM4TLuHkMKkpJf6g2+6sZUwNIZRKB3QtO/Ajk49ztRoQVeFhjzLUazvJgTLuHJPoQ==
+"@dendronhq/common-test-utils@0.43.5-alpha.0":
+  version "0.43.5-alpha.0"
+  resolved "http://localhost:4873/@dendronhq%2fcommon-test-utils/-/common-test-utils-0.43.5-alpha.0.tgz#8efeb86433903d523c3867a233ccdc74a7f3f5f6"
+  integrity sha512-tIZIcSywoihZ300/2HbolqZpTHB7EdRpqqWB3DN8/09ai5an8ecApQwlFClQsCNgWVgTj8Aja3zWvovMlQBIzQ==
   dependencies:
-    "@dendronhq/common-all" "^0.41.0"
-    "@dendronhq/common-server" "^0.41.0"
-    "@dendronhq/pods-core" "^0.41.0"
+    "@dendronhq/common-all" "^0.43.5-alpha.0"
+    "@dendronhq/common-server" "^0.43.5-alpha.0"
+    "@dendronhq/pods-core" "^0.43.5-alpha.0"
     "@types/sinon" "^9.0.9"
     fs-extra "^9.0.1"
     lodash "^4.17.20"
     sinon "^9.2.1"
 
-"@dendronhq/engine-server@0.41.0", "@dendronhq/engine-server@^0.41.0":
-  version "0.41.0"
-  resolved "https://registry.npmjs.org/@dendronhq/engine-server/-/engine-server-0.41.0.tgz#5be993e271a75368d35023a545eb1233922ff758"
-  integrity sha512-2XiAmRbFCPlYo8cZCubmtGCEoITdkFBrJsgpm6Ew/98rcYzzxYjMkIwDNKrCgmna7sz7B+yhmYk3GfewUQR15Q==
+"@dendronhq/engine-server@0.43.5-alpha.0", "@dendronhq/engine-server@^0.43.5-alpha.0":
+  version "0.43.5-alpha.0"
+  resolved "http://localhost:4873/@dendronhq%2fengine-server/-/engine-server-0.43.5-alpha.0.tgz#ff3364cd4eebd09e6b36cec1d7feb312480fe9ea"
+  integrity sha512-zvbMOMcfRAEc2edWQ1YLXBmiyY8+kc5eK58eMY9zyfoB6uCrdtOfxViqqEyW+38xgM287TJZQ88aczgTP7r2EQ==
   dependencies:
-    "@dendronhq/common-all" "^0.41.0"
-    "@dendronhq/common-server" "^0.41.0"
+    "@dendronhq/common-all" "^0.43.5-alpha.0"
+    "@dendronhq/common-server" "^0.43.5-alpha.0"
     "@dendronhq/remark-mermaid" "^0.2.0"
     "@mapbox/rehype-prism" "^0.5.0"
     "@types/fs-extra" "^9.0.1"
@@ -301,6 +301,7 @@
     "@types/through2" "^2.0.36"
     "@types/unist" "^2.0.3"
     "@types/yamljs" "^0.2.31"
+    axios "^0.21.1"
     cross-path-sort "^1.0.0"
     diff2html "^3.2.0"
     execa "^4.0.3"
@@ -309,10 +310,12 @@
     gray-matter "^4.0.2"
     klaw "^3.0.0"
     lodash "^4.17.15"
+    mdast "^3.0.0"
     mdast-builder "^1.1.1"
     mdast-util-compact "^2.0.1"
     mdast-util-inject "^1.1.0"
     nunjucks "^3.2.3"
+    qs "^6.10.1"
     rehype-autolink-headings "^5.0.1"
     rehype-katex "3"
     rehype-raw "^5.0.0"
@@ -340,14 +343,14 @@
     vscode-uri "^2.1.2"
     yamljs "^0.3.0"
 
-"@dendronhq/pods-core@^0.41.0":
-  version "0.41.0"
-  resolved "https://registry.npmjs.org/@dendronhq/pods-core/-/pods-core-0.41.0.tgz#2710aa834ef7cce45d093feae18f8ee4f160d3f1"
-  integrity sha512-fTGF9sG3NAW/7l4HQnAAgsTIyHf/PpENs/gEfa3i2HUY3mTZi8sahZpkAd/gqA0DNaNBGHEEaOHQpr08YA9VOw==
+"@dendronhq/pods-core@^0.43.5-alpha.0":
+  version "0.43.5-alpha.0"
+  resolved "http://localhost:4873/@dendronhq%2fpods-core/-/pods-core-0.43.5-alpha.0.tgz#a7570e285b853b37c71ccac7a6bff8dbccadce34"
+  integrity sha512-onNjcwR1zHIwJEveynGRe2aWGvg2GNwrUIGjCa8lZbDLW/EzjYWiDPUETDxJDCm7ay/gQuqse9MvqPWivSfR+Q==
   dependencies:
-    "@dendronhq/common-all" "^0.41.0"
-    "@dendronhq/common-server" "^0.41.0"
-    "@dendronhq/engine-server" "^0.41.0"
+    "@dendronhq/common-all" "^0.43.5-alpha.0"
+    "@dendronhq/common-server" "^0.43.5-alpha.0"
+    "@dendronhq/engine-server" "^0.43.5-alpha.0"
     csv-writer "^1.6.0"
     emailjs "^3.4.0"
     fs-extra "^9.0.1"
@@ -1495,6 +1498,14 @@ cache-base@^1.0.1:
     to-object-path "^0.3.0"
     union-value "^1.0.0"
     unset-value "^1.0.0"
+
+call-bind@^1.0.0:
+  version "1.0.2"
+  resolved "http://localhost:4873/call-bind/-/call-bind-1.0.2.tgz#b1d4e89e688119c3c9a903ad30abb2f6a919be3c"
+  integrity sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==
+  dependencies:
+    function-bind "^1.1.1"
+    get-intrinsic "^1.0.2"
 
 caller-callsite@^2.0.0:
   version "2.0.0"
@@ -2829,6 +2840,15 @@ get-caller-file@^2.0.1:
   version "2.0.5"
   resolved "https://registry.npm.taobao.org/get-caller-file/download/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha1-T5RBKoLbMvNuOwuXQfipf+sDH34=
+
+get-intrinsic@^1.0.2:
+  version "1.1.1"
+  resolved "http://localhost:4873/get-intrinsic/-/get-intrinsic-1.1.1.tgz#15f59f376f855c446963948f0d24cd3637b4abc6"
+  integrity sha512-kWZrnVM42QCiEA2Ig1bG8zjoIMOgxWwYCEeNdwY6Tv/cOSeGpcoX4pXHfKUxNKVoArnrEr2e9srnAxxGIraS9Q==
+  dependencies:
+    function-bind "^1.1.1"
+    has "^1.0.3"
+    has-symbols "^1.0.1"
 
 get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.2"
@@ -4698,6 +4718,11 @@ mdast-util-toc@^5.0.0:
     unist-util-is "^4.0.0"
     unist-util-visit "^2.0.0"
 
+mdast@^3.0.0:
+  version "3.0.0"
+  resolved "http://localhost:4873/mdast/-/mdast-3.0.0.tgz#626bce9603ed43fb6fb053245a6e4a17f4457aa8"
+  integrity sha1-YmvOlgPtQ/tvsFMkWm5KF/RFeqg=
+
 mdurl@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
@@ -5024,6 +5049,11 @@ object-inspect@^1.7.0:
   version "1.7.0"
   resolved "https://registry.npm.taobao.org/object-inspect/download/object-inspect-1.7.0.tgz#f4f6bd181ad77f006b5ece60bd0b6f398ff74a67"
   integrity sha1-9Pa9GBrXfwBrXs5gvQtvOY/3Smc=
+
+object-inspect@^1.9.0:
+  version "1.10.3"
+  resolved "http://localhost:4873/object-inspect/-/object-inspect-1.10.3.tgz#c2aa7d2d09f50c99375704f7a0adf24c5782d369"
+  integrity sha512-e5mCJlSH7poANfC8z8S9s9S2IN5/4Zb3aZ33f5s8YqoazCFzNLloLU8r5VCG+G7WoqLvAAZoVMcy3tp/3X0Plw==
 
 object-keys@^1.0.11, object-keys@^1.0.12, object-keys@^1.1.1:
   version "1.1.1"
@@ -5558,6 +5588,13 @@ qiniu@^7.2.2:
     mime "^2.4.4"
     tunnel-agent "^0.6.0"
     urllib "^2.34.1"
+
+qs@^6.10.1:
+  version "6.10.1"
+  resolved "http://localhost:4873/qs/-/qs-6.10.1.tgz#4931482fa8d647a5aab799c5271d2133b981fb6a"
+  integrity sha512-M528Hph6wsSVOBiYUnGf+K/7w0hNshs/duGsNXPUCLH5XAqjEtiPGwNONLV0tBH8NoGb0mvD5JubnUTrujKDTg==
+  dependencies:
+    side-channel "^1.0.4"
 
 qs@^6.4.0:
   version "6.9.4"
@@ -6164,6 +6201,15 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/shellwords/download/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha1-1rkYHBpI05cyTISHHvvPxz/AZUs=
+
+side-channel@^1.0.4:
+  version "1.0.4"
+  resolved "http://localhost:4873/side-channel/-/side-channel-1.0.4.tgz#efce5c8fdc104ee751b25c58d4290011fa5ea2cf"
+  integrity sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==
+  dependencies:
+    call-bind "^1.0.0"
+    get-intrinsic "^1.0.2"
+    object-inspect "^1.9.0"
 
 signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
   version "3.0.3"
