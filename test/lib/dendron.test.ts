@@ -11,7 +11,7 @@ import {
 } from "@dendronhq/common-test-utils";
 import {
   VaultUtils,
-  DEngineClientV2,
+  DEngineClient,
   DVault,
   WorkspaceOpts,
 } from "@dendronhq/common-all";
@@ -28,7 +28,7 @@ function createEngine(opts: WorkspaceOpts) {
 
 async function createMdEngine(opts: {
   projectDirectoryPath: string;
-  engine: DEngineClientV2;
+  engine: DEngineClient;
 }) {
   const configPath = path.resolve(os.homedir(), ".mume"); // use here your own config folder, default is "~/.mume"
   await mume.init(configPath); // default uses "~/.mume"
@@ -51,7 +51,7 @@ async function createMdEngine(opts: {
 
 async function parse(
   text: string,
-  opts: { engine: DEngineClientV2; vaults: DVault[]; wsRoot: string },
+  opts: { engine: DEngineClient; vaults: DVault[]; wsRoot: string },
 ) {
   const { vaults, wsRoot, engine } = opts;
   const vault = vaults[0];

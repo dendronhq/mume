@@ -1,5 +1,5 @@
 // import * as Baby from "babyparse"
-import { DEngineClientV2 } from "@dendronhq/engine-server";
+import { DEngineClient } from "@dendronhq/engine-server";
 import * as Baby from "babyparse";
 import * as fs from "fs";
 import * as less from "less";
@@ -64,7 +64,7 @@ export interface TransformMarkdownOptions {
   renderRefWithOutline?: boolean;
   onWillTransformMarkdown?: (markdown: string) => Promise<string>;
   onDidTransformMarkdown?: (markdown: string) => Promise<string>;
-  engine: DEngineClientV2;
+  engine: DEngineClient;
 }
 
 const fileExtensionToLanguageMap = {

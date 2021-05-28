@@ -1,10 +1,6 @@
 // tslint:disable no-var-requires member-ordering
 
-import {
-  DEngineClientV2,
-  VaultUtils,
-  DendronError,
-} from "@dendronhq/common-all";
+import { DEngineClient, VaultUtils, DendronError } from "@dendronhq/common-all";
 import {
   DendronASTDest,
   MDUtilsV4,
@@ -185,7 +181,7 @@ export class MarkdownEngine {
    * markdown file path
    */
   private readonly filePath: string;
-  private readonly engine: DEngineClientV2;
+  private readonly engine: DEngineClient;
   private readonly fileDirectoryPath: string;
   private readonly projectDirectoryPath: string;
 
@@ -239,7 +235,7 @@ export class MarkdownEngine {
      * Markdown Engine configuration.
      */
     config?: MarkdownEngineConfig;
-    engine: DEngineClientV2;
+    engine: DEngineClient;
   }) {
     this.filePath = args.filePath;
     this.engine = args.engine;
@@ -2950,7 +2946,7 @@ sidebarTOCBtn.addEventListener('click', function(event) {
     }
 
     try {
-      const { wsRoot, vaultsv3: vaults } = this.engine;
+      const { wsRoot, vaults } = this.engine;
       const { error, data } = await this.engine.getConfig();
       if (!data) {
         throw new DendronError({
