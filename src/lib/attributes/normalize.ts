@@ -1,4 +1,4 @@
-const snakeCase = require("lodash/snakeCase");
+import { snakeCase } from "lodash";
 import { Attributes } from ".";
 
 /**

@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es6",
+    "target": "ES2019",
     "sourceMap": true,
     "skipLibCheck": true,
     "outDir": "out",
-    "lib": ["es6", "dom"],
+    "lib": ["ES2019", "dom"],
     "rootDir": ".",
     "declaration": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "importHelpers": true,
+    "esModuleInterop": false
   },
   "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules"]

@@ -3,26 +3,10 @@
 exports[`MarkdownEngine basic 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<h2></h2>
-<div class=\\"portal-container\\">
-<div class=\\"portal-head\\">
-<div class=\\"portal-backlink\\">
-<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-53171-1aSyF22EARFy/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
-</div>
-</div>
-<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
-<div class=\\"portal-parent-fader-top\\"></div>
-<div class=\\"portal-parent-fader-bottom\\"></div>        
-<h1>Header1</h1>
-<p>body1</p>
-<h1></h1>
-<p>body2</p>
-</div>    
-</div>
+  "html": "<h2>!<a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-81064-toXQ8d5977A3/vault1/alpha.md\\">alpha</a></h2>
 <p><code>code span</code>some text</p>
 ",
-  "markdown": "((ref:[[alpha]]))
+  "markdown": "![[alpha]]
 ---
 
 \`code span\`some text",
@@ -34,9 +18,20 @@ Object {
 exports[`MarkdownEngine basic wiki link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-53171-cAJTUCFo7k37/vault1/foo.md\\">foo</a></p>
+  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-81064-qDN5cjYyo4MK/vault1/foo.md\\">foo</a></p>
 ",
   "markdown": "[[foo]]",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;
+
+exports[`MarkdownEngine image link 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<p><img src=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-81064-4YzH0JL61qcv/vault1/foo.jpg\\" alt=\\"foo\\"></p>
+",
+  "markdown": "![foo](foo.jpg)",
   "tocHTML": "",
   "yamlConfig": Object {},
 }
@@ -58,7 +53,7 @@ $$",
 exports[`MarkdownEngine rel link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-53171-e4A8UcTrs69F/vault1/foobar.md\\">foobar</a></p>
+  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-81064-YPoRvS1Vh7An/vault1/foobar#rel-link.md\\">foobar#rel-link</a></p>
 ",
   "markdown": "[[foobar#rel-link]]",
   "tocHTML": "",
@@ -69,7 +64,7 @@ Object {
 exports[`MarkdownEngine wiki link with space 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/65/c9lrx0tx6k7b_zlb4v1bs2rr0000gn/T/tmp-53171-LsPEhGAg50uH/vault1/foo%20bar.md\\">foo bar</a></p>
+  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-79257-qky0JKFbD5iD/vault1/foo_bar.md\\">foo bar</a></p>
 ",
   "markdown": "[[foo bar]]",
   "tocHTML": "",
@@ -80,23 +75,7 @@ Object {
 exports[`MarkdownEngine with header 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<h2></h2>
-<div class=\\"portal-container\\">
-<div class=\\"portal-head\\">
-<div class=\\"portal-backlink\\">
-<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
-</div>
-</div>
-<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
-<div class=\\"portal-parent-fader-top\\"></div>
-<div class=\\"portal-parent-fader-bottom\\"></div>        
-<h1>Header1</h1>
-<p>body1</p>
-<h1></h1>
-<p>body2</p>
-</div>    
-</div>
+  "html": "<h2>((ref:<a href=\\"file:///Users/kevinlin/code/mume/vault1/alpha.md\\">alpha</a>#Header1))</h2>
 <p><code>code span</code>some text</p>
 ",
   "markdown": "((ref:[[alpha]]#Header1))
@@ -111,22 +90,7 @@ Object {
 exports[`MarkdownEngine with header offset 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<h2></h2>
-<div class=\\"portal-container\\">
-<div class=\\"portal-head\\">
-<div class=\\"portal-backlink\\">
-<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
-</div>
-</div>
-<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
-<div class=\\"portal-parent-fader-top\\"></div>
-<div class=\\"portal-parent-fader-bottom\\"></div>        
-<p>body1</p>
-<h1></h1>
-<p>body2</p>
-</div>    
-</div>
+  "html": "<h2>((ref:<a href=\\"file:///Users/kevinlin/code/mume/vault1/alpha.md\\">alpha</a>#Header1,1))</h2>
 <p><code>code span</code>some text</p>
 ",
   "markdown": "((ref:[[alpha]]#Header1,1))
@@ -141,21 +105,7 @@ Object {
 exports[`MarkdownEngine with wildcard 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<h2></h2>
-<div class=\\"portal-container\\">
-<div class=\\"portal-head\\">
-<div class=\\"portal-backlink\\">
-<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">alpha</span></div>
-<a href=\\"file:///Users/kevinlin/projects/dendronv2/ref/mume/vault1/alpha.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
-</div>
-</div>
-<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
-<div class=\\"portal-parent-fader-top\\"></div>
-<div class=\\"portal-parent-fader-bottom\\"></div>        
-<h1>Header1</h1>
-<p>body1</p>
-</div>    
-</div>
+  "html": "<h2>((ref:<a href=\\"file:///Users/kevinlin/code/mume/vault1/alpha.md\\">alpha</a>#Header1:#*))</h2>
 <p><code>code span</code>some text</p>
 ",
   "markdown": "((ref:[[alpha]]#Header1:#*))

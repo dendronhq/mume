@@ -76,7 +76,7 @@ const testOpts = {
   },
 };
 
-describe.skip("MarkdownEngine", () => {
+describe("MarkdownEngine", () => {
   test("basic wiki link", async () => {
     await runEngineTestV4(
       async (opts) => {
@@ -98,7 +98,28 @@ describe.skip("MarkdownEngine", () => {
     );
   });
 
-  test("wiki link with space", async () => {
+  test("image link", async () => {
+    await runEngineTestV4(
+      async (opts) => {
+        const out = await parse("![foo](foo.jpg)", opts);
+        expect(out).toMatchSnapshot();
+        const wsRoot = opts.wsRoot;
+        const vpath = path.join(wsRoot, opts.vaults[0].fsPath);
+        expect(
+          await AssertUtils.assertInString({
+            body: out.html,
+            match: [`file://${vpath}/foo.md`],
+          }),
+        ).toBeTruthy();
+        return [];
+      },
+      {
+        ...testOpts,
+      },
+    );
+  });
+
+  test.skip("wiki link with space", async () => {
     await runEngineTestV4(
       async (opts) => {
         const out = await parse("[[foo bar]]", opts);
@@ -123,7 +144,7 @@ describe.skip("MarkdownEngine", () => {
     await runEngineTestV4(
       async (opts) => {
         const txt = [
-          `((ref:[[${NOTE_PRESETS_V4.NOTE_WITH_NOTE_REF_TARGET.fname}]]))`,
+          `![[${NOTE_PRESETS_V4.NOTE_WITH_NOTE_REF_TARGET.fname}]]`,
           "---",
           "",
           "`code span`" + "some text",
