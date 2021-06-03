@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MarkdownEngine basic 1`] = `
+exports[`MarkdownEngine basic note ref 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<h2>!<a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-81064-toXQ8d5977A3/vault1/alpha.md\\">alpha</a></h2>
+  "html": "<h2>!<a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-15758-TeG04BuyyXs6/vault1/alpha.md\\">alpha</a></h2>
 <p><code>code span</code>some text</p>
 ",
   "markdown": "![[alpha]]
@@ -18,9 +18,43 @@ Object {
 exports[`MarkdownEngine basic wiki link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-81064-qDN5cjYyo4MK/vault1/foo.md\\">foo</a></p>
+  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-15957-HMyjiLzpmMT5/vault1/foo.md\\">foo</a></p>
 ",
   "markdown": "[[foo]]",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;
+
+exports[`MarkdownEngine block ref block ref link 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<h1>Anchor Target</h1>
+<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-15957-QRcNrsv5XHFL/vault1/anchor-target.md\\">anchor-target</a></p>
+",
+  "markdown": "[[anchor-target#^block-id]]",
+  "tocHTML": "",
+  "yamlConfig": Object {},
+}
+`;
+
+exports[`MarkdownEngine block ref block ref ref 1`] = `
+Object {
+  "JSAndCssFiles": Array [],
+  "html": "<h1>Anchor Target</h1>
+<div class=\\"portal-container\\">
+<div class=\\"portal-head\\">
+<div class=\\"portal-backlink\\">
+<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">anchor-target</span></div>
+<a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-15957-q9H8ABSFm7gn/vault1/anchor-target.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
+</div>
+</div>
+<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
+<div class=\\"portal-parent-fader-top\\"></div>
+<div class=\\"portal-parent-fader-bottom\\"></div>Lorem ipsum dolor amet
+Maiores exercitationem officiis adipisci voluptate
+</div></div>",
+  "markdown": "![[anchor-target#^block-id]]",
   "tocHTML": "",
   "yamlConfig": Object {},
 }
@@ -29,7 +63,7 @@ Object {
 exports[`MarkdownEngine image link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><img src=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-81064-4YzH0JL61qcv/vault1/foo.jpg\\" alt=\\"foo\\"></p>
+  "html": "<p><img src=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-15957-JckbytQbCNg3/vault1/foo.jpg\\" alt=\\"foo\\"></p>
 ",
   "markdown": "![foo](foo.jpg)",
   "tocHTML": "",
@@ -53,7 +87,7 @@ $$",
 exports[`MarkdownEngine rel link 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-81064-YPoRvS1Vh7An/vault1/foobar#rel-link.md\\">foobar#rel-link</a></p>
+  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-11561-98h4qDnwF2oy/vault1/foobar#rel-link.md\\">foobar#rel-link</a></p>
 ",
   "markdown": "[[foobar#rel-link]]",
   "tocHTML": "",
@@ -64,7 +98,7 @@ Object {
 exports[`MarkdownEngine wiki link with space 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-79257-qky0JKFbD5iD/vault1/foo_bar.md\\">foo bar</a></p>
+  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-14850-cNnOSV1AtUFu/vault1/foo_bar.md\\">foo bar</a></p>
 ",
   "markdown": "[[foo bar]]",
   "tocHTML": "",
@@ -75,10 +109,10 @@ Object {
 exports[`MarkdownEngine with header 1`] = `
 Object {
   "JSAndCssFiles": Array [],
-  "html": "<h2>((ref:<a href=\\"file:///Users/kevinlin/code/mume/vault1/alpha.md\\">alpha</a>#Header1))</h2>
+  "html": "<h2>!<a href=\\"file:///Users/kevinlin/code/mume/vault1/alpha#Header1.md\\">alpha#Header1</a></h2>
 <p><code>code span</code>some text</p>
 ",
-  "markdown": "((ref:[[alpha]]#Header1))
+  "markdown": "![[alpha#Header1]]
 ---
 
 \`code span\`some text",

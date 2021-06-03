@@ -2954,7 +2954,7 @@ sidebarTOCBtn.addEventListener('click', function(event) {
           payload: error,
         });
       }
-      const vault = VaultUtils.getVaultByPath({
+      const vault = VaultUtils.getVaultByDirPath({
         wsRoot,
         vaults,
         fsPath: this.fileDirectoryPath,
