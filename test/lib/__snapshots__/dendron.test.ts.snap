@@ -15,62 +15,6 @@ Object {
 }
 `;
 
-exports[`MarkdownEngine basic wiki link 1`] = `
-Object {
-  "JSAndCssFiles": Array [],
-  "html": "<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-15957-HMyjiLzpmMT5/vault1/foo.md\\">foo</a></p>
-",
-  "markdown": "[[foo]]",
-  "tocHTML": "",
-  "yamlConfig": Object {},
-}
-`;
-
-exports[`MarkdownEngine block ref block ref link 1`] = `
-Object {
-  "JSAndCssFiles": Array [],
-  "html": "<h1>Anchor Target</h1>
-<p><a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-15957-QRcNrsv5XHFL/vault1/anchor-target.md\\">anchor-target</a></p>
-",
-  "markdown": "[[anchor-target#^block-id]]",
-  "tocHTML": "",
-  "yamlConfig": Object {},
-}
-`;
-
-exports[`MarkdownEngine block ref block ref ref 1`] = `
-Object {
-  "JSAndCssFiles": Array [],
-  "html": "<h1>Anchor Target</h1>
-<div class=\\"portal-container\\">
-<div class=\\"portal-head\\">
-<div class=\\"portal-backlink\\">
-<div class=\\"portal-title\\">From <span class=\\"portal-text-title\\">anchor-target</span></div>
-<a href=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-15957-q9H8ABSFm7gn/vault1/anchor-target.md\\" class=\\"portal-arrow\\">Go to text <span class=\\"right-arrow\\">&#x2192;</span></a>
-</div>
-</div>
-<div id=\\"portal-parent-anchor\\" class=\\"portal-parent\\" markdown=\\"1\\">
-<div class=\\"portal-parent-fader-top\\"></div>
-<div class=\\"portal-parent-fader-bottom\\"></div>Lorem ipsum dolor amet
-Maiores exercitationem officiis adipisci voluptate
-</div></div>",
-  "markdown": "![[anchor-target#^block-id]]",
-  "tocHTML": "",
-  "yamlConfig": Object {},
-}
-`;
-
-exports[`MarkdownEngine image link 1`] = `
-Object {
-  "JSAndCssFiles": Array [],
-  "html": "<p><img src=\\"file:///var/folders/1l/h5rmxkhs3ldfr3y5fzkkw2v40000gn/T/tmp-15957-JckbytQbCNg3/vault1/foo.jpg\\" alt=\\"foo\\"></p>
-",
-  "markdown": "![foo](foo.jpg)",
-  "tocHTML": "",
-  "yamlConfig": Object {},
-}
-`;
-
 exports[`MarkdownEngine math 1`] = `
 Object {
   "JSAndCssFiles": Array [],

@@ -88,7 +88,6 @@ describe("MarkdownEngine", () => {
     await runEngineTestV4(
       async (opts) => {
         const out = await parse("[[foo]]", { ...opts, fname: "foo" });
-        expect(out).toMatchSnapshot();
         const wsRoot = opts.wsRoot;
         const vpath = path.join(wsRoot, opts.vaults[0].fsPath);
         expect(
@@ -109,7 +108,6 @@ describe("MarkdownEngine", () => {
     await runEngineTestV4(
       async (opts) => {
         const out = await parse("![foo](foo.jpg)", { ...opts, fname: "foo" });
-        expect(out).toMatchSnapshot();
         const wsRoot = opts.wsRoot;
         const vpath = path.join(wsRoot, opts.vaults[0].fsPath);
         expect(
@@ -373,7 +371,6 @@ describe("MarkdownEngine", () => {
         async (opts) => {
           const fname = NOTE_PRESETS_V4.NOTE_WITH_BLOCK_ANCHOR_TARGET.fname;
           const out = await parse(`[[${fname}#^block-id]]`, { ...opts, fname });
-          expect(out).toMatchSnapshot();
           const wsRoot = opts.wsRoot;
           const vpath = path.join(wsRoot, opts.vaults[0].fsPath);
           expect(
@@ -405,7 +402,6 @@ describe("MarkdownEngine", () => {
             ...opts,
             fname,
           });
-          expect(out).toMatchSnapshot();
           expect(
             await AssertUtils.assertInString({
               body: out.html,
