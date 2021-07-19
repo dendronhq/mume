@@ -1126,8 +1126,8 @@ if (typeof(window['Reveal']) !== 'undefined') {
         )}
         ${head}
       </head>
-      <body class="preview-container">
-        <div class="mume markdown-preview" for="preview" ${
+      <body class="preview-container main-content-wrap" id="main-content-wrap">
+        <div class="mume markdown-preview main-content" for="preview"  id="main-content" ${
           isPresentationMode ? "data-presentation-mode" : ""
         }>
           ${html}
